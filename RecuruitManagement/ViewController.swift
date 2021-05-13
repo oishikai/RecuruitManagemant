@@ -8,8 +8,10 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController{
     
+    var addBarButtonItem: UIBarButtonItem!      // +ボタン
+
     var comp = ["A社", "B社", "C社"]
     var companies:[Company] = []
     
@@ -18,6 +20,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonTapped(_:)))
+        self.navigationItem.rightBarButtonItems = [addBarButtonItem]
+
         let dataCondition = NSFetchRequest<NSFetchRequestResult>(entityName: "Company")
             do{
               companies = try managedObjectContext.fetch(dataCondition) as! [Company]
@@ -26,6 +31,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
     }
     
+    @objc func addBarButtonTapped(_ sender: UIBarButtonItem) {
+            print("【+】ボタンが押された!")
+        }
+}
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
@@ -36,4 +47,3 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
 }
-
