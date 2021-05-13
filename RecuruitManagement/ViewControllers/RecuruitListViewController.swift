@@ -32,8 +32,12 @@ class RecuruitListViewController: UIViewController{
     }
     
     @objc func addBarButtonTapped(_ sender: UIBarButtonItem) {
-            print("【+】ボタンが押された!")
+        DispatchQueue.main.async {
+            let storyboard = UIStoryboard(name: "AddCompanyViewController", bundle: nil)
+            let nextVC = storyboard.instantiateViewController(identifier: "AddCompanyViewController")as! AddCompanyViewController
+            self.navigationController?.pushViewController(nextVC, animated: true)
         }
+    }
 }
 
 extension RecuruitListViewController: UITableViewDelegate, UITableViewDataSource {
