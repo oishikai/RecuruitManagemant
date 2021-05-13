@@ -6,24 +6,38 @@
 //
 
 import UIKit
+import CoreData
 
-class AddCompanyViewController: UIViewController {
+class AddCompanyViewController: UIViewController ,UITextFieldDelegate {
+    
+    @IBOutlet weak var companyNameField: UITextField!
+    @IBAction func AddCompanyButton(_ sender: Any) {
+        let newCompany = Company(context: self.managedObjectContext)
+
+        newCompany.companyName = companyNameField.text
+
+        self.companies.append(newCompany)
+
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+    }
+    
+    var companies:[Company] = []
+
+    var managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        companyNameField.delegate = self
+        
+        let dataCondition = NSFetchRequest<NSFetchRequestResult>(entityName: "Company")
+            do{
+              companies = try managedObjectContext.fetch(dataCondition) as! [Company]
+            }catch{
+              print("エラーだよ")
+            }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
-    */
-
 }

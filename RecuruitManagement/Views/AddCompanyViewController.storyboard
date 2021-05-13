@@ -34,11 +34,17 @@
                                 <rect key="frame" x="172" y="490" width="95" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="企業追加"/>
+                                <connections>
+                                    <action selector="AddCompanyButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0Ab-5v-Is7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="companyNameField" destination="Nyw-I9-KnZ" id="QcJ-bp-Xzv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
