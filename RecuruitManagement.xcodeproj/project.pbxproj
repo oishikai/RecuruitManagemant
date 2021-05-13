@@ -16,6 +16,8 @@
 		2A2DA2AA263BC314001B6DC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A2DA2A8263BC314001B6DC9 /* LaunchScreen.storyboard */; };
 		2A2DA2B5263BC314001B6DC9 /* RecuruitManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DA2B4263BC314001B6DC9 /* RecuruitManagementTests.swift */; };
 		2A2DA2C0263BC314001B6DC9 /* RecuruitManagementUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DA2BF263BC314001B6DC9 /* RecuruitManagementUITests.swift */; };
+		2A845796264D6C3A00D3691C /* AddCompanyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A845795264D6C3A00D3691C /* AddCompanyViewController.storyboard */; };
+		2A845798264D6C5D00D3691C /* AddCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A845797264D6C5D00D3691C /* AddCompanyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		2A2DA2BB263BC314001B6DC9 /* RecuruitManagementUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecuruitManagementUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2DA2BF263BC314001B6DC9 /* RecuruitManagementUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecuruitManagementUITests.swift; sourceTree = "<group>"; };
 		2A2DA2C1263BC314001B6DC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A845795264D6C3A00D3691C /* AddCompanyViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddCompanyViewController.storyboard; sourceTree = "<group>"; };
+		2A845797264D6C5D00D3691C /* AddCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCompanyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 				2A2DA29C263BC313001B6DC9 /* SceneDelegate.swift */,
 				2A2DA29E263BC313001B6DC9 /* RecuruitListViewController.swift */,
 				2A2DA2A0263BC313001B6DC9 /* RecuruitListViewController.storyboard */,
+				2A845795264D6C3A00D3691C /* AddCompanyViewController.storyboard */,
+				2A845797264D6C5D00D3691C /* AddCompanyViewController.swift */,
 				2A2DA2A6263BC314001B6DC9 /* Assets.xcassets */,
 				2A2DA2A8263BC314001B6DC9 /* LaunchScreen.storyboard */,
 				2A2DA2AB263BC314001B6DC9 /* Info.plist */,
@@ -234,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A845796264D6C3A00D3691C /* AddCompanyViewController.storyboard in Resources */,
 				2A2DA2AA263BC314001B6DC9 /* LaunchScreen.storyboard in Resources */,
 				2A2DA2A7263BC314001B6DC9 /* Assets.xcassets in Resources */,
 				2A2DA2A2263BC313001B6DC9 /* RecuruitListViewController.storyboard in Resources */,
@@ -261,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A845798264D6C5D00D3691C /* AddCompanyViewController.swift in Sources */,
 				2A2DA29F263BC313001B6DC9 /* RecuruitListViewController.swift in Sources */,
 				2A2DA29B263BC313001B6DC9 /* AppDelegate.swift in Sources */,
 				2A2DA29D263BC313001B6DC9 /* SceneDelegate.swift in Sources */,
