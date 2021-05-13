@@ -13,12 +13,13 @@ class AddCompanyViewController: UIViewController ,UITextFieldDelegate {
     @IBOutlet weak var companyNameField: UITextField!
     @IBAction func AddCompanyButton(_ sender: Any) {
         let newCompany = Company(context: self.managedObjectContext)
-
         newCompany.companyName = companyNameField.text
-
         self.companies.append(newCompany)
-
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     var companies:[Company] = []
@@ -36,6 +37,7 @@ class AddCompanyViewController: UIViewController ,UITextFieldDelegate {
               print("エラーだよ")
             }
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

@@ -10,6 +10,7 @@ import CoreData
 
 class RecuruitListViewController: UIViewController{
     
+    @IBOutlet weak var companyTableView: UITableView!
     var addBarButtonItem: UIBarButtonItem!      // +ボタン
 
     var comp = ["A社", "B社", "C社"]
@@ -31,6 +32,17 @@ class RecuruitListViewController: UIViewController{
             }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(animated)
+            let dataCondition = NSFetchRequest<NSFetchRequestResult>(entityName: "Company")
+            do{
+              companies = try managedObjectContext.fetch(dataCondition) as! [Company]
+            }catch{
+              print("エラーだよ")
+            }
+            companyTableView.reloadData()
+        }
+    
     @objc func addBarButtonTapped(_ sender: UIBarButtonItem) {
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "AddCompanyViewController", bundle: nil)
@@ -42,12 +54,13 @@ class RecuruitListViewController: UIViewController{
 
 extension RecuruitListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return companies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = comp[indexPath.row]
+        let data = companies[indexPath.row]
+        cell.textLabel?.text = data.companyName
         return cell
     }
 }
