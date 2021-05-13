@@ -11,9 +11,8 @@ import CoreData
 class RecuruitListViewController: UIViewController{
     
     @IBOutlet weak var companyTableView: UITableView!
-    var addBarButtonItem: UIBarButtonItem!      // +ボタン
+    var addBarButtonItem: UIBarButtonItem!
 
-    var comp = ["A社", "B社", "C社"]
     var companies:[Company] = []
     
     var managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -28,7 +27,7 @@ class RecuruitListViewController: UIViewController{
             do{
               companies = try managedObjectContext.fetch(dataCondition) as! [Company]
             }catch{
-              print("エラーだよ")
+              print("error")
             }
     }
     
@@ -38,7 +37,7 @@ class RecuruitListViewController: UIViewController{
             do{
               companies = try managedObjectContext.fetch(dataCondition) as! [Company]
             }catch{
-              print("エラーだよ")
+              print("error")
             }
             companyTableView.reloadData()
         }
@@ -47,6 +46,7 @@ class RecuruitListViewController: UIViewController{
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "AddCompanyViewController", bundle: nil)
             let nextVC = storyboard.instantiateViewController(identifier: "AddCompanyViewController")as! AddCompanyViewController
+            nextVC.title = "企業を追加する"
             self.navigationController?.pushViewController(nextVC, animated: true)
         }
     }

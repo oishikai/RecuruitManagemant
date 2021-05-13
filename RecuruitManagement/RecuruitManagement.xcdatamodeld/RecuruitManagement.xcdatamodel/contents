@@ -2,8 +2,9 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20D91" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="Company" representedClassName="Company" syncable="YES" codeGenerationType="class">
         <attribute name="companyName" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="URI"/>
     </entity>
     <elements>
-        <element name="Company" positionX="-63" positionY="-18" width="128" height="44"/>
+        <element name="Company" positionX="-63" positionY="-18" width="128" height="59"/>
     </elements>
 </model>

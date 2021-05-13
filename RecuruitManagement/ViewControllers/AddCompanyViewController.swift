@@ -11,6 +11,7 @@ import CoreData
 class AddCompanyViewController: UIViewController ,UITextFieldDelegate {
     
     @IBOutlet weak var companyNameField: UITextField!
+    
     @IBAction func AddCompanyButton(_ sender: Any) {
         let newCompany = Company(context: self.managedObjectContext)
         newCompany.companyName = companyNameField.text
