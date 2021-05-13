@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController{
+class RecuruitListViewController: UIViewController{
     
     var addBarButtonItem: UIBarButtonItem!      // +ボタン
 
@@ -36,7 +36,7 @@ class ViewController: UIViewController{
         }
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension RecuruitListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
