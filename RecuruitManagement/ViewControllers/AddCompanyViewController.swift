@@ -14,7 +14,7 @@ class AddCompanyViewController: UIViewController ,UITextFieldDelegate {
     @IBOutlet weak var aspirationField: UITextField!
     
     var pickerView: UIPickerView = UIPickerView()
-    let list = ["1", "2", "3", "4", "5"]
+    let aspiration = ["1", "2", "3", "4", "5"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,22 +31,29 @@ class AddCompanyViewController: UIViewController ,UITextFieldDelegate {
         
         self.aspirationField.inputView = pickerView
         self.aspirationField.inputAccessoryView = toolbar
+        
     }
     
     @IBAction func AddCompanyButton(_ sender: Any) {
+        
         guard !(companyNameField.text?.isEmpty ?? true) else {
-            print("Name is Empty")
+            print("Name is Empty or nil")
             return
         }
         
         guard !(urlField.text?.isEmpty ?? true) else {
-            print("URL is Empty")
+            print("URL is Empty or nil")
             return
         }
         
-        let companyURL = URL(string: urlField.text!)!
+        guard !(aspirationField.text?.isEmpty ?? true) else {
+            print("aspiration is Empty or nil")
+            return
+        }
         
-        AccessData.saveNewCompany(name: companyNameField.text!, url: companyURL)
+        guard let companyURL = URL(string: urlField.text!) else { return }
+        
+        AccessData.saveNewCompany(name: companyNameField.text!, url: companyURL, aspiration: aspirationField.text!)
         DispatchQueue.main.async {
             self.navigationController?.popViewController(animated: true)
         }
@@ -64,15 +71,15 @@ extension AddCompanyViewController:  UIPickerViewDelegate, UIPickerViewDataSourc
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return list.count
+        return aspiration.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-            return list[row]
+            return aspiration[row]
         }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-            self.aspirationField.text = list[row]
+            self.aspirationField.text = aspiration[row]
         }
     
     @objc func done() {

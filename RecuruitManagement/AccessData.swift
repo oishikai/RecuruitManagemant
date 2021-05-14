@@ -24,7 +24,7 @@ class AccessData: UIViewController {
         return nil
     }
     
-    static func saveNewCompany(name: String, url: URL) -> Void {
+    static func saveNewCompany(name: String, url: URL, aspiration: String) -> Void {
         var companies:[Company] = []
         let comp = AccessData.getCompanies()
         guard comp != nil else {
@@ -36,6 +36,7 @@ class AccessData: UIViewController {
         let newCompany = Company(context: self.managedObjectContext)
         newCompany.companyName = name
         newCompany.url = url
+        newCompany.aspiration = aspiration
         companies.append(newCompany)
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
