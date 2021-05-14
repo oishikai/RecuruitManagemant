@@ -12,11 +12,12 @@ class RecuruitListViewController: UIViewController {
     @IBOutlet weak var companyTableView: UITableView!
     var addBarButtonItem: UIBarButtonItem!
 
-    var companies:[Company] = []
+    private var companies:[Company] = []
         
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "企業一覧"
+        
         addBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonTapped(_:)))
         self.navigationItem.rightBarButtonItems = [addBarButtonItem]
         
