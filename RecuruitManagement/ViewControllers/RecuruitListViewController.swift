@@ -14,33 +14,31 @@ class RecuruitListViewController: UIViewController {
     var addBarButtonItem: UIBarButtonItem!
 
     var companies:[Company] = []
-    
-    var managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "企業一覧"
         addBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonTapped(_:)))
         self.navigationItem.rightBarButtonItems = [addBarButtonItem]
         
-        let dataCondition = NSFetchRequest<NSFetchRequestResult>(entityName: "Company")
-            do{
-              companies = try managedObjectContext.fetch(dataCondition) as! [Company]
-            }catch{
-              print("error")
-            }
+        let comp = AccessData.getCompanies()
+        guard comp != nil else {
+            print("accessError")
+            return
+        }
+        companies = comp!
     }
     
     override func viewDidAppear(_ animated: Bool) {
-            super.viewDidAppear(animated)
-            let dataCondition = NSFetchRequest<NSFetchRequestResult>(entityName: "Company")
-            do{
-              companies = try managedObjectContext.fetch(dataCondition) as! [Company]
-            }catch{
-              print("error")
-            }
-            companyTableView.reloadData()
+        super.viewDidAppear(animated)
+        let comp = AccessData.getCompanies()
+        guard comp != nil else {
+            print("accessError")
+            return
         }
+        companies = comp!
+        companyTableView.reloadData()
+    }
     
     @objc func addBarButtonTapped(_ sender: UIBarButtonItem) {
         DispatchQueue.main.async {
