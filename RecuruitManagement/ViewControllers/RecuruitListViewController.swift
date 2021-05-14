@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class RecuruitListViewController: UIViewController{
+class RecuruitListViewController: UIViewController {
     
     @IBOutlet weak var companyTableView: UITableView!
     var addBarButtonItem: UIBarButtonItem!
@@ -19,10 +19,10 @@ class RecuruitListViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "企業一覧"
         addBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonTapped(_:)))
         self.navigationItem.rightBarButtonItems = [addBarButtonItem]
-
+        
         let dataCondition = NSFetchRequest<NSFetchRequestResult>(entityName: "Company")
             do{
               companies = try managedObjectContext.fetch(dataCondition) as! [Company]

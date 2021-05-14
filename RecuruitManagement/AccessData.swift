@@ -6,7 +6,21 @@
 //
 
 import UIKit
+import CoreData
 
-class Access: NSObject {
+class AccessData: UIViewController {
+        
+    static func getCompanies() ->[Company]? {
+        var companies:[Company] = []
+        let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
+        let dataCondition = NSFetchRequest<NSFetchRequestResult>(entityName: "Company")
+        do{
+            companies = try managedObjectContext.fetch(dataCondition) as! [Company]
+            return companies
+        }catch{
+            print("エラーだよ")
+        }
+        return nil
+    }
 }
