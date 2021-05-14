@@ -11,6 +11,21 @@ import CoreData
 class AddCompanyViewController: UIViewController ,UITextFieldDelegate {
     
     @IBOutlet weak var companyNameField: UITextField!
+    @IBOutlet weak var urlField: UITextField!
+    
+    var companies:[Company] = []
+    var managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "企業を追加する"
+        let dataCondition = NSFetchRequest<NSFetchRequestResult>(entityName: "Company")
+            do{
+              companies = try managedObjectContext.fetch(dataCondition) as! [Company]
+            }catch{
+              print("エラーだよ")
+            }
+    }
     
     @IBAction func AddCompanyButton(_ sender: Any) {
         let newCompany = Company(context: self.managedObjectContext)
@@ -21,22 +36,6 @@ class AddCompanyViewController: UIViewController ,UITextFieldDelegate {
         DispatchQueue.main.async {
             self.navigationController?.popViewController(animated: true)
         }
-    }
-    
-    var companies:[Company] = []
-
-    var managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        companyNameField.delegate = self
-        
-        let dataCondition = NSFetchRequest<NSFetchRequestResult>(entityName: "Company")
-            do{
-              companies = try managedObjectContext.fetch(dataCondition) as! [Company]
-            }catch{
-              print("エラーだよ")
-            }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

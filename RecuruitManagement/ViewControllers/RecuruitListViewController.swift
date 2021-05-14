@@ -46,7 +46,6 @@ class RecuruitListViewController: UIViewController{
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "AddCompanyViewController", bundle: nil)
             let nextVC = storyboard.instantiateViewController(identifier: "AddCompanyViewController")as! AddCompanyViewController
-            nextVC.title = "企業を追加する"
             self.navigationController?.pushViewController(nextVC, animated: true)
         }
     }
