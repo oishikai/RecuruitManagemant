@@ -12,6 +12,11 @@ class AddCompanyViewController: UIViewController ,UITextFieldDelegate {
     @IBOutlet weak var companyNameField: UITextField!
     @IBOutlet weak var urlField: UITextField!
     @IBOutlet weak var aspirationField: UITextField!
+    @IBOutlet weak var addCompButton: UIButton! {
+        didSet {
+            addCompButton.isEnabled = false
+        }
+    }
     
     var pickerView: UIPickerView = UIPickerView()
     let aspiration = ["1", "2", "3", "4", "5"]
@@ -19,6 +24,9 @@ class AddCompanyViewController: UIViewController ,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "企業を追加する"
+        
+        companyNameField.delegate = self
+        urlField.delegate = self
         
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -34,23 +42,8 @@ class AddCompanyViewController: UIViewController ,UITextFieldDelegate {
         
     }
     
-    @IBAction func AddCompanyButton(_ sender: Any) {
-        
-        guard !(companyNameField.text?.isEmpty ?? true) else {
-            print("Name is Empty or nil")
-            return
-        }
-        
-        guard !(urlField.text?.isEmpty ?? true) else {
-            print("URL is Empty or nil")
-            return
-        }
-        
-        guard !(aspirationField.text?.isEmpty ?? true) else {
-            print("aspiration is Empty or nil")
-            return
-        }
-        
+    @IBAction func addCompanyButton(_ sender: Any) {
+
         guard let companyURL = URL(string: urlField.text!) else { return }
         
         AccessData.saveNewCompany(name: companyNameField.text!, url: companyURL, aspiration: aspirationField.text!)
@@ -61,6 +54,10 @@ class AddCompanyViewController: UIViewController ,UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        if AccessData.canUnwrapDatas(name: companyNameField.text, url: urlField.text, aspiration: aspirationField.text) {
+            addCompButton.isEnabled = true
+        }
+        print("called")
         return true
     }
 }
@@ -80,10 +77,13 @@ extension AddCompanyViewController:  UIPickerViewDelegate, UIPickerViewDataSourc
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
             self.aspirationField.text = aspiration[row]
-        }
+    }
     
     @objc func done() {
-            self.aspirationField.endEditing(true)
+        self.aspirationField.endEditing(true)
+        if AccessData.canUnwrapDatas(name: companyNameField.text, url: urlField.text, aspiration: aspirationField.text) {
+            addCompButton.isEnabled = true
         }
+    }
     
 }

@@ -24,6 +24,22 @@ class AccessData: UIViewController {
         return nil
     }
     
+    static func canUnwrapDatas(name: String?, url: String?, aspiration: String?) -> Bool {
+        guard !(name?.isEmpty ?? true) else {
+            print("Name is Empty or nil")
+            return false
+        }
+        guard !(url?.isEmpty ?? true) else {
+            print("Name is Empty or nil")
+            return false
+        }
+        guard !(aspiration?.isEmpty ?? true) else {
+            print("Name is Empty or nil")
+            return false
+        }
+        return true
+    }
+    
     static func saveNewCompany(name: String, url: URL, aspiration: String) -> Void {
         var companies:[Company] = []
         let comp = AccessData.getCompanies()
