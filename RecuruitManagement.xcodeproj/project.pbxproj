@@ -19,6 +19,8 @@
 		2A845796264D6C3A00D3691C /* AddCompanyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A845795264D6C3A00D3691C /* AddCompanyViewController.storyboard */; };
 		2A845798264D6C5D00D3691C /* AddCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A845797264D6C5D00D3691C /* AddCompanyViewController.swift */; };
 		2AA05DFC264E055A004546F8 /* AccessData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA05DFB264E055A004546F8 /* AccessData.swift */; };
+		2AFDE846264F854800E6D5DF /* EventListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AFDE845264F854800E6D5DF /* EventListViewController.storyboard */; };
+		2AFDE848264F857500E6D5DF /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDE847264F857500E6D5DF /* EventListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		2A845795264D6C3A00D3691C /* AddCompanyViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddCompanyViewController.storyboard; sourceTree = "<group>"; };
 		2A845797264D6C5D00D3691C /* AddCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCompanyViewController.swift; sourceTree = "<group>"; };
 		2AA05DFB264E055A004546F8 /* AccessData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessData.swift; sourceTree = "<group>"; };
+		2AFDE845264F854800E6D5DF /* EventListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventListViewController.storyboard; sourceTree = "<group>"; };
+		2AFDE847264F857500E6D5DF /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 			children = (
 				2A2DA2A0263BC313001B6DC9 /* RecuruitListViewController.storyboard */,
 				2A845795264D6C3A00D3691C /* AddCompanyViewController.storyboard */,
+				2AFDE845264F854800E6D5DF /* EventListViewController.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 			children = (
 				2A2DA29E263BC313001B6DC9 /* RecuruitListViewController.swift */,
 				2A845797264D6C5D00D3691C /* AddCompanyViewController.swift */,
+				2AFDE847264F857500E6D5DF /* EventListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A845796264D6C3A00D3691C /* AddCompanyViewController.storyboard in Resources */,
+				2AFDE846264F854800E6D5DF /* EventListViewController.storyboard in Resources */,
 				2A2DA2AA263BC314001B6DC9 /* LaunchScreen.storyboard in Resources */,
 				2A2DA2A7263BC314001B6DC9 /* Assets.xcassets in Resources */,
 				2A2DA2A2263BC313001B6DC9 /* RecuruitListViewController.storyboard in Resources */,
@@ -288,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A845798264D6C5D00D3691C /* AddCompanyViewController.swift in Sources */,
+				2AFDE848264F857500E6D5DF /* EventListViewController.swift in Sources */,
 				2AA05DFC264E055A004546F8 /* AccessData.swift in Sources */,
 				2A2DA29F263BC313001B6DC9 /* RecuruitListViewController.swift in Sources */,
 				2A2DA29B263BC313001B6DC9 /* AppDelegate.swift in Sources */,

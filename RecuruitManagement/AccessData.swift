@@ -24,6 +24,18 @@ class AccessData: UIViewController {
         return nil
     }
     
+//    static func getEvents(company: Company) ->[Event]? {
+//        var events:[Event] = []
+//        let dataCondition = NSFetchRequest<NSFetchRequestResult>(entityName: "Event")
+//        do{
+//            events = try managedObjectContext.fetch(dataCondition) as! [Event]
+//            return events
+//        }catch{
+//            print("エラーだよ")
+//        }
+//        return nil
+//    }
+    
     static func canUnwrapDatas(name: String?, url: String?, aspiration: String?) -> Bool {
         guard !(name?.isEmpty ?? true) else {
             print("Name is Empty or nil")
