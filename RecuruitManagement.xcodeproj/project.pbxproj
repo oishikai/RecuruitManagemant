@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		2A2DA29B263BC313001B6DC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DA29A263BC313001B6DC9 /* AppDelegate.swift */; };
 		2A2DA29D263BC313001B6DC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DA29C263BC313001B6DC9 /* SceneDelegate.swift */; };
-		2A2DA29F263BC313001B6DC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DA29E263BC313001B6DC9 /* ViewController.swift */; };
-		2A2DA2A2263BC313001B6DC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A2DA2A0263BC313001B6DC9 /* Main.storyboard */; };
+		2A2DA29F263BC313001B6DC9 /* RecuruitListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DA29E263BC313001B6DC9 /* RecuruitListViewController.swift */; };
+		2A2DA2A2263BC313001B6DC9 /* RecuruitListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A2DA2A0263BC313001B6DC9 /* RecuruitListViewController.storyboard */; };
 		2A2DA2A5263BC313001B6DC9 /* RecuruitManagement.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DA2A3263BC313001B6DC9 /* RecuruitManagement.xcdatamodeld */; };
 		2A2DA2A7263BC314001B6DC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A2DA2A6263BC314001B6DC9 /* Assets.xcassets */; };
 		2A2DA2AA263BC314001B6DC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A2DA2A8263BC314001B6DC9 /* LaunchScreen.storyboard */; };
 		2A2DA2B5263BC314001B6DC9 /* RecuruitManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DA2B4263BC314001B6DC9 /* RecuruitManagementTests.swift */; };
 		2A2DA2C0263BC314001B6DC9 /* RecuruitManagementUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DA2BF263BC314001B6DC9 /* RecuruitManagementUITests.swift */; };
+		2A845796264D6C3A00D3691C /* AddCompanyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A845795264D6C3A00D3691C /* AddCompanyViewController.storyboard */; };
+		2A845798264D6C5D00D3691C /* AddCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A845797264D6C5D00D3691C /* AddCompanyViewController.swift */; };
+		2AA05DFC264E055A004546F8 /* AccessData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA05DFB264E055A004546F8 /* AccessData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +42,8 @@
 		2A2DA297263BC313001B6DC9 /* RecuruitManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecuruitManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2DA29A263BC313001B6DC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A2DA29C263BC313001B6DC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2A2DA29E263BC313001B6DC9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2A2DA2A1263BC313001B6DC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2A2DA29E263BC313001B6DC9 /* RecuruitListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecuruitListViewController.swift; sourceTree = "<group>"; };
+		2A2DA2A1263BC313001B6DC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RecuruitListViewController.storyboard; sourceTree = "<group>"; };
 		2A2DA2A4263BC313001B6DC9 /* RecuruitManagement.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecuruitManagement.xcdatamodel; sourceTree = "<group>"; };
 		2A2DA2A6263BC314001B6DC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A2DA2A9263BC314001B6DC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +54,9 @@
 		2A2DA2BB263BC314001B6DC9 /* RecuruitManagementUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecuruitManagementUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2DA2BF263BC314001B6DC9 /* RecuruitManagementUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecuruitManagementUITests.swift; sourceTree = "<group>"; };
 		2A2DA2C1263BC314001B6DC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A845795264D6C3A00D3691C /* AddCompanyViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddCompanyViewController.storyboard; sourceTree = "<group>"; };
+		2A845797264D6C5D00D3691C /* AddCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCompanyViewController.swift; sourceTree = "<group>"; };
+		2AA05DFB264E055A004546F8 /* AccessData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +107,11 @@
 		2A2DA299263BC313001B6DC9 /* RecuruitManagement */ = {
 			isa = PBXGroup;
 			children = (
+				2A845799264D6D7300D3691C /* Views */,
+				2A84579A264D6DB300D3691C /* ViewControllers */,
+				2AA05DFB264E055A004546F8 /* AccessData.swift */,
 				2A2DA29A263BC313001B6DC9 /* AppDelegate.swift */,
 				2A2DA29C263BC313001B6DC9 /* SceneDelegate.swift */,
-				2A2DA29E263BC313001B6DC9 /* ViewController.swift */,
-				2A2DA2A0263BC313001B6DC9 /* Main.storyboard */,
 				2A2DA2A6263BC314001B6DC9 /* Assets.xcassets */,
 				2A2DA2A8263BC314001B6DC9 /* LaunchScreen.storyboard */,
 				2A2DA2AB263BC314001B6DC9 /* Info.plist */,
@@ -129,6 +136,24 @@
 				2A2DA2C1263BC314001B6DC9 /* Info.plist */,
 			);
 			path = RecuruitManagementUITests;
+			sourceTree = "<group>";
+		};
+		2A845799264D6D7300D3691C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A2DA2A0263BC313001B6DC9 /* RecuruitListViewController.storyboard */,
+				2A845795264D6C3A00D3691C /* AddCompanyViewController.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2A84579A264D6DB300D3691C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2A2DA29E263BC313001B6DC9 /* RecuruitListViewController.swift */,
+				2A845797264D6C5D00D3691C /* AddCompanyViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,9 +259,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A845796264D6C3A00D3691C /* AddCompanyViewController.storyboard in Resources */,
 				2A2DA2AA263BC314001B6DC9 /* LaunchScreen.storyboard in Resources */,
 				2A2DA2A7263BC314001B6DC9 /* Assets.xcassets in Resources */,
-				2A2DA2A2263BC313001B6DC9 /* Main.storyboard in Resources */,
+				2A2DA2A2263BC313001B6DC9 /* RecuruitListViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +287,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A2DA29F263BC313001B6DC9 /* ViewController.swift in Sources */,
+				2A845798264D6C5D00D3691C /* AddCompanyViewController.swift in Sources */,
+				2AA05DFC264E055A004546F8 /* AccessData.swift in Sources */,
+				2A2DA29F263BC313001B6DC9 /* RecuruitListViewController.swift in Sources */,
 				2A2DA29B263BC313001B6DC9 /* AppDelegate.swift in Sources */,
 				2A2DA29D263BC313001B6DC9 /* SceneDelegate.swift in Sources */,
 				2A2DA2A5263BC313001B6DC9 /* RecuruitManagement.xcdatamodeld in Sources */,
@@ -300,12 +328,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2A2DA2A0263BC313001B6DC9 /* Main.storyboard */ = {
+		2A2DA2A0263BC313001B6DC9 /* RecuruitListViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2A2DA2A1263BC313001B6DC9 /* Base */,
 			);
-			name = Main.storyboard;
+			name = RecuruitListViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		2A2DA2A8263BC314001B6DC9 /* LaunchScreen.storyboard */ = {
