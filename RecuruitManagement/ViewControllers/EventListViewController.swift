@@ -25,8 +25,8 @@ class EventListViewController: UIViewController{
     
     @objc func addBarButtonTapped(_ sender: UIBarButtonItem) {
         DispatchQueue.main.async {
-            let storyboard = UIStoryboard(name: "AddCompanyViewController", bundle: nil)
-            let nextVC = storyboard.instantiateViewController(identifier: "AddCompanyViewController")as! AddCompanyViewController
+            let storyboard = UIStoryboard(name: "AddEventViewController", bundle: nil)
+            let nextVC = storyboard.instantiateViewController(identifier: "AddEventViewController")as! AddEventViewController
             self.navigationController?.pushViewController(nextVC, animated: true)
         }
     }
