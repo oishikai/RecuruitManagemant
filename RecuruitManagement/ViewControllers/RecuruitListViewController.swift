@@ -56,8 +56,7 @@ extension RecuruitListViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        let data = companies[indexPath.row]
-        cell.textLabel?.text = data.companyName
+        cell.textLabel?.text = companies[indexPath.row].companyName
         return cell
     }
     
@@ -67,7 +66,7 @@ extension RecuruitListViewController: UITableViewDelegate, UITableViewDataSource
             let nextVC = storyboard.instantiateViewController(identifier: "EventListViewController")as! EventListViewController
             self.navigationController?.pushViewController(nextVC, animated: true)
             nextVC.title = self.companies[indexPath.row].companyName
-            nextVC.events = self.companies[indexPath.row].event
+//            nextVC.events = self.companies[indexPath.row].event
         }
     }
 
