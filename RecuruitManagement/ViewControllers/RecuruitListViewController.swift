@@ -66,7 +66,7 @@ extension RecuruitListViewController: UITableViewDelegate, UITableViewDataSource
             let nextVC = storyboard.instantiateViewController(identifier: "EventListViewController")as! EventListViewController
             self.navigationController?.pushViewController(nextVC, animated: true)
             nextVC.title = self.companies[indexPath.row].companyName
-            nextVC.events = self.companies[indexPath.row].event
+            nextVC.company = self.companies[indexPath.row]
         }
     }
 

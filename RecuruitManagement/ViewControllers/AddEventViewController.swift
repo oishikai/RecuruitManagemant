@@ -10,29 +10,30 @@ import CoreData
 
 class AddEventViewController: UIViewController ,UITextFieldDelegate {
 
-    @IBOutlet weak var eventName: UITextField!
+    @IBOutlet weak var eventNameField: UITextField!
     @IBOutlet weak var addNewEventButton: UIButton!
     
-    static let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
-    var events:NSSet?
+    var company:Company!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "イベントを追加する"
 
-        eventName.delegate = self
+        eventNameField.delegate = self
     }
     
     @IBAction func addNewEventButton(_ sender: Any) {
-        guard !(eventName.text?.isEmpty ?? true) else {
+        guard !(eventNameField.text?.isEmpty ?? true) else {
             print("Name is Empty or nil")
             return
         }
-        
+        let newEvent = Event(context: self.managedObjectContext)
+        newEvent.eventName = eventNameField.text
+        company.addToEvent(newEvent)
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
-    public func addToEvent(_ value: Event) {
-        
-    }
-
 }
