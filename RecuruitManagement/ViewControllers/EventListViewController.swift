@@ -7,14 +7,14 @@
 
 import UIKit
 
-class EventListViewController: UIViewController{
+class EventListViewController: UIViewController {
 
     @IBOutlet weak var eventTable: UITableView!
     var addBarButtonItem: UIBarButtonItem!
 
     var list = ["一次面接", "書類選考"]
     
-    var events:NSSet?
+    var company:Company!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class EventListViewController: UIViewController{
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "AddEventViewController", bundle: nil)
             let nextVC = storyboard.instantiateViewController(identifier: "AddEventViewController")as! AddEventViewController
-            nextVC.events = self.events
+            nextVC.company = self.company
             self.navigationController?.pushViewController(nextVC, animated: true)
         }
     }
