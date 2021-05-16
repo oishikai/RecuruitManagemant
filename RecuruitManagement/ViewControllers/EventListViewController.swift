@@ -14,7 +14,7 @@ class EventListViewController: UIViewController{
 
     var list = ["一次面接", "書類選考"]
     
-    var events:NSSet? = []
+    var events:NSSet?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,7 @@ class EventListViewController: UIViewController{
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "AddEventViewController", bundle: nil)
             let nextVC = storyboard.instantiateViewController(identifier: "AddEventViewController")as! AddEventViewController
+            nextVC.events = self.events
             self.navigationController?.pushViewController(nextVC, animated: true)
         }
     }

@@ -35,7 +35,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="addNewEvent:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="twd-FS-Nyd"/>
+                                    <action selector="addNewEventButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="twd-FS-Nyd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -43,7 +43,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="addNewEvent" destination="7KE-Gi-qP3" id="4e7-QT-82m"/>
+                        <outlet property="addNewEventButton" destination="7KE-Gi-qP3" id="4e7-QT-82m"/>
                         <outlet property="eventName" destination="d7l-Cv-G8H" id="6cF-bf-GZl"/>
                     </connections>
                 </viewController>
