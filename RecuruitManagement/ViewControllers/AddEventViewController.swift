@@ -10,7 +10,10 @@ import CoreData
 
 class AddEventViewController: UIViewController ,UITextFieldDelegate {
 
+    @IBOutlet weak var eventDateField: UITextField!
     @IBOutlet weak var eventNameField: UITextField!
+    @IBOutlet weak var eventLocateField: UITextField!
+    @IBOutlet weak var eventMemoText: UITextView!
     @IBOutlet weak var addNewEventButton: UIButton!
     
     let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
