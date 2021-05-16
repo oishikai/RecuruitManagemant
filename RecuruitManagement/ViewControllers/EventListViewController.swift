@@ -23,6 +23,11 @@ class EventListViewController: UIViewController {
         self.navigationItem.rightBarButtonItems = [addBarButtonItem]
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        eventTable.reloadData()
+    }
+    
     @objc func addBarButtonTapped(_ sender: UIBarButtonItem) {
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "AddEventViewController", bundle: nil)
@@ -36,12 +41,13 @@ class EventListViewController: UIViewController {
 extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return company.event?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = list[indexPath.row]
+        let events = company.event?.allObjects as! [Event]
+        cell.textLabel?.text = events[indexPath.row].eventName
         return cell
     }
 }

@@ -32,5 +32,8 @@ class AddEventViewController: UIViewController ,UITextFieldDelegate {
         let newEvent = Event(context: self.managedObjectContext)
         newEvent.eventName = eventNameField.text
         company.addToEvent(newEvent)
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }
