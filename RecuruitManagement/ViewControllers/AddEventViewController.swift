@@ -11,17 +11,23 @@ import CoreData
 class AddEventViewController: UIViewController ,UITextFieldDelegate {
 
     @IBOutlet weak var eventNameField: UITextField!
+    @IBOutlet weak var eventDatePicker: UIDatePicker!
+    @IBOutlet weak var eventLocateField: UITextField!
+    @IBOutlet weak var eventMemoText: UITextView!
     @IBOutlet weak var addNewEventButton: UIButton!
     
+    var datePicker: UIDatePicker = UIDatePicker()
+    
     let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
+    
     var company:Company!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "イベントを追加する"
-
+        
         eventNameField.delegate = self
+
     }
     
     @IBAction func addNewEventButton(_ sender: Any) {
