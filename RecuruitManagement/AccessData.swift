@@ -50,4 +50,11 @@ class AccessData: UIViewController {
         companies.append(newCompany)
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
+    
+    static func saveNewEvent(name: String, date:Date, locate:String) -> Void {
+        let newEvent = Event(context: self.managedObjectContext)
+        newEvent.eventName = name
+        newEvent.eventLocate = locate
+        newEvent.eventDate = date
+    }
 }
