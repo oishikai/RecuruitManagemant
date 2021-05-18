@@ -11,6 +11,8 @@
 		2A0318792652C4E300CF21E7 /* NewEventFormViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A0318782652C4E300CF21E7 /* NewEventFormViewController.storyboard */; };
 		2A03187B265408C900CF21E7 /* NewCompanyFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A03187A265408C900CF21E7 /* NewCompanyFormViewController.swift */; };
 		2A03187D2654098600CF21E7 /* NewCompanyFormViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A03187C2654098600CF21E7 /* NewCompanyFormViewController.storyboard */; };
+		2A0318832654188600CF21E7 /* RecuruitListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0318812654188600CF21E7 /* RecuruitListTableViewCell.swift */; };
+		2A0318842654188600CF21E7 /* RecuruitListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A0318822654188600CF21E7 /* RecuruitListTableViewCell.xib */; };
 		2A2DA29B263BC313001B6DC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DA29A263BC313001B6DC9 /* AppDelegate.swift */; };
 		2A2DA29D263BC313001B6DC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DA29C263BC313001B6DC9 /* SceneDelegate.swift */; };
 		2A2DA29F263BC313001B6DC9 /* RecuruitListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DA29E263BC313001B6DC9 /* RecuruitListViewController.swift */; };
@@ -52,6 +54,8 @@
 		2A0318782652C4E300CF21E7 /* NewEventFormViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewEventFormViewController.storyboard; sourceTree = "<group>"; };
 		2A03187A265408C900CF21E7 /* NewCompanyFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCompanyFormViewController.swift; sourceTree = "<group>"; };
 		2A03187C2654098600CF21E7 /* NewCompanyFormViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewCompanyFormViewController.storyboard; sourceTree = "<group>"; };
+		2A0318812654188600CF21E7 /* RecuruitListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecuruitListTableViewCell.swift; sourceTree = "<group>"; };
+		2A0318822654188600CF21E7 /* RecuruitListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecuruitListTableViewCell.xib; sourceTree = "<group>"; };
 		2A2DA297263BC313001B6DC9 /* RecuruitManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecuruitManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2DA29A263BC313001B6DC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A2DA29C263BC313001B6DC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 				2A03187C2654098600CF21E7 /* NewCompanyFormViewController.storyboard */,
 				2AFDE845264F854800E6D5DF /* EventListViewController.storyboard */,
 				2A0318782652C4E300CF21E7 /* NewEventFormViewController.storyboard */,
+				2A0318822654188600CF21E7 /* RecuruitListTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 				2A03187A265408C900CF21E7 /* NewCompanyFormViewController.swift */,
 				2AFDE847264F857500E6D5DF /* EventListViewController.swift */,
 				2A0318762652C3F600CF21E7 /* NewEventFormViewController.swift */,
+				2A0318812654188600CF21E7 /* RecuruitListTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -322,6 +328,7 @@
 				2A2DA2A7263BC314001B6DC9 /* Assets.xcassets in Resources */,
 				2A03187D2654098600CF21E7 /* NewCompanyFormViewController.storyboard in Resources */,
 				2A2DA2A2263BC313001B6DC9 /* RecuruitListViewController.storyboard in Resources */,
+				2A0318842654188600CF21E7 /* RecuruitListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +458,7 @@
 			files = (
 				2A03187B265408C900CF21E7 /* NewCompanyFormViewController.swift in Sources */,
 				2AFDE848264F857500E6D5DF /* EventListViewController.swift in Sources */,
+				2A0318832654188600CF21E7 /* RecuruitListTableViewCell.swift in Sources */,
 				2A0318772652C3F600CF21E7 /* NewEventFormViewController.swift in Sources */,
 				2AA05DFC264E055A004546F8 /* AccessData.swift in Sources */,
 				2A2DA29F263BC313001B6DC9 /* RecuruitListViewController.swift in Sources */,
