@@ -46,10 +46,10 @@ class AddCompanyViewController: UIViewController ,UITextFieldDelegate {
 
         guard let companyURL = URL(string: urlField.text!) else { return }
         
-        AccessData.saveNewCompany(name: companyNameField.text!, url: companyURL, aspiration: aspirationField.text!)
-        DispatchQueue.main.async {
-            self.navigationController?.popViewController(animated: true)
-        }
+//        AccessData.saveNewCompany(name: companyNameField.text!, url: companyURL, aspiration: aspirationField.text!)
+//        DispatchQueue.main.async {
+//            self.navigationController?.popViewController(animated: true)
+//        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
