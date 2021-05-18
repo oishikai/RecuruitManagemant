@@ -8,7 +8,7 @@
 import UIKit
 import Eureka
 
-class EventFormViewController: FormViewController{
+class NewEventFormViewController: FormViewController{
     
     var eventName:String?
     var eventDate:Date?

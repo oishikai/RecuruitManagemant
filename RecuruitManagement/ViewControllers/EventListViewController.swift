@@ -11,8 +11,6 @@ class EventListViewController: UIViewController {
 
     @IBOutlet weak var eventTable: UITableView!
     var addBarButtonItem: UIBarButtonItem!
-
-    var list = ["一次面接", "書類選考"]
     
     var company:Company!
     
@@ -39,8 +37,8 @@ class EventListViewController: UIViewController {
     
     @objc func addBarButtonTapped(_ sender: UIBarButtonItem) {
         DispatchQueue.main.async {
-            let storyboard = UIStoryboard(name: "EventFormViewController", bundle: nil)
-            let nextVC = storyboard.instantiateViewController(identifier: "EventFormViewController")as! EventFormViewController
+            let storyboard = UIStoryboard(name: "NewEventFormViewController", bundle: nil)
+            let nextVC = storyboard.instantiateViewController(identifier: "NewEventFormViewController")as! NewEventFormViewController
             nextVC.company = self.company
             self.navigationController?.pushViewController(nextVC, animated: true)
         }

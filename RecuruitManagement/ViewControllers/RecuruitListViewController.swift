@@ -42,8 +42,8 @@ class RecuruitListViewController: UIViewController {
     
     @objc func addBarButtonTapped(_ sender: UIBarButtonItem) {
         DispatchQueue.main.async {
-            let storyboard = UIStoryboard(name: "AddCompanyViewController", bundle: nil)
-            let nextVC = storyboard.instantiateViewController(identifier: "AddCompanyViewController")as! AddCompanyViewController
+            let storyboard = UIStoryboard(name: "NewCompanyFormViewController", bundle: nil)
+            let nextVC = storyboard.instantiateViewController(identifier: "NewCompanyFormViewController")as! NewCompanyFormViewController
             self.navigationController?.pushViewController(nextVC, animated: true)
         }
     }

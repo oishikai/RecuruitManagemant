@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A0318772652C3F600CF21E7 /* EventFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0318762652C3F600CF21E7 /* EventFormViewController.swift */; };
-		2A0318792652C4E300CF21E7 /* EventFormViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A0318782652C4E300CF21E7 /* EventFormViewController.storyboard */; };
-		2A10CB50264FB4F200AD1EA9 /* AddEventViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A10CB4F264FB4F200AD1EA9 /* AddEventViewController.storyboard */; };
-		2A10CB52264FB50E00AD1EA9 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A10CB51264FB50E00AD1EA9 /* AddEventViewController.swift */; };
+		2A0318772652C3F600CF21E7 /* NewEventFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0318762652C3F600CF21E7 /* NewEventFormViewController.swift */; };
+		2A0318792652C4E300CF21E7 /* NewEventFormViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A0318782652C4E300CF21E7 /* NewEventFormViewController.storyboard */; };
+		2A03187B265408C900CF21E7 /* NewCompanyFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A03187A265408C900CF21E7 /* NewCompanyFormViewController.swift */; };
+		2A03187D2654098600CF21E7 /* NewCompanyFormViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A03187C2654098600CF21E7 /* NewCompanyFormViewController.storyboard */; };
 		2A2DA29B263BC313001B6DC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DA29A263BC313001B6DC9 /* AppDelegate.swift */; };
 		2A2DA29D263BC313001B6DC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DA29C263BC313001B6DC9 /* SceneDelegate.swift */; };
 		2A2DA29F263BC313001B6DC9 /* RecuruitListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DA29E263BC313001B6DC9 /* RecuruitListViewController.swift */; };
@@ -50,10 +50,10 @@
 /* Begin PBXFileReference section */
 		0050DF7BAED02F7DD36BDFA6 /* Pods-RecuruitManagement.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecuruitManagement.release.xcconfig"; path = "Target Support Files/Pods-RecuruitManagement/Pods-RecuruitManagement.release.xcconfig"; sourceTree = "<group>"; };
 		14B57F25EBAF4E9088452C85 /* Pods-RecuruitManagementTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecuruitManagementTests.release.xcconfig"; path = "Target Support Files/Pods-RecuruitManagementTests/Pods-RecuruitManagementTests.release.xcconfig"; sourceTree = "<group>"; };
-		2A0318762652C3F600CF21E7 /* EventFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFormViewController.swift; sourceTree = "<group>"; };
-		2A0318782652C4E300CF21E7 /* EventFormViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventFormViewController.storyboard; sourceTree = "<group>"; };
-		2A10CB4F264FB4F200AD1EA9 /* AddEventViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddEventViewController.storyboard; sourceTree = "<group>"; };
-		2A10CB51264FB50E00AD1EA9 /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
+		2A0318762652C3F600CF21E7 /* NewEventFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventFormViewController.swift; sourceTree = "<group>"; };
+		2A0318782652C4E300CF21E7 /* NewEventFormViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewEventFormViewController.storyboard; sourceTree = "<group>"; };
+		2A03187A265408C900CF21E7 /* NewCompanyFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCompanyFormViewController.swift; sourceTree = "<group>"; };
+		2A03187C2654098600CF21E7 /* NewCompanyFormViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewCompanyFormViewController.storyboard; sourceTree = "<group>"; };
 		2A2DA297263BC313001B6DC9 /* RecuruitManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecuruitManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2DA29A263BC313001B6DC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A2DA29C263BC313001B6DC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -172,9 +172,9 @@
 			children = (
 				2A2DA2A0263BC313001B6DC9 /* RecuruitListViewController.storyboard */,
 				2A845795264D6C3A00D3691C /* AddCompanyViewController.storyboard */,
+				2A03187C2654098600CF21E7 /* NewCompanyFormViewController.storyboard */,
 				2AFDE845264F854800E6D5DF /* EventListViewController.storyboard */,
-				2A10CB4F264FB4F200AD1EA9 /* AddEventViewController.storyboard */,
-				2A0318782652C4E300CF21E7 /* EventFormViewController.storyboard */,
+				2A0318782652C4E300CF21E7 /* NewEventFormViewController.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -184,9 +184,9 @@
 			children = (
 				2A2DA29E263BC313001B6DC9 /* RecuruitListViewController.swift */,
 				2A845797264D6C5D00D3691C /* AddCompanyViewController.swift */,
+				2A03187A265408C900CF21E7 /* NewCompanyFormViewController.swift */,
 				2AFDE847264F857500E6D5DF /* EventListViewController.swift */,
-				2A10CB51264FB50E00AD1EA9 /* AddEventViewController.swift */,
-				2A0318762652C3F600CF21E7 /* EventFormViewController.swift */,
+				2A0318762652C3F600CF21E7 /* NewEventFormViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -322,12 +322,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A10CB50264FB4F200AD1EA9 /* AddEventViewController.storyboard in Resources */,
 				2A845796264D6C3A00D3691C /* AddCompanyViewController.storyboard in Resources */,
-				2A0318792652C4E300CF21E7 /* EventFormViewController.storyboard in Resources */,
+				2A0318792652C4E300CF21E7 /* NewEventFormViewController.storyboard in Resources */,
 				2AFDE846264F854800E6D5DF /* EventListViewController.storyboard in Resources */,
 				2A2DA2AA263BC314001B6DC9 /* LaunchScreen.storyboard in Resources */,
 				2A2DA2A7263BC314001B6DC9 /* Assets.xcassets in Resources */,
+				2A03187D2654098600CF21E7 /* NewCompanyFormViewController.storyboard in Resources */,
 				2A2DA2A2263BC313001B6DC9 /* RecuruitListViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,9 +457,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A845798264D6C5D00D3691C /* AddCompanyViewController.swift in Sources */,
-				2A10CB52264FB50E00AD1EA9 /* AddEventViewController.swift in Sources */,
+				2A03187B265408C900CF21E7 /* NewCompanyFormViewController.swift in Sources */,
 				2AFDE848264F857500E6D5DF /* EventListViewController.swift in Sources */,
-				2A0318772652C3F600CF21E7 /* EventFormViewController.swift in Sources */,
+				2A0318772652C3F600CF21E7 /* NewEventFormViewController.swift in Sources */,
 				2AA05DFC264E055A004546F8 /* AccessData.swift in Sources */,
 				2A2DA29F263BC313001B6DC9 /* RecuruitListViewController.swift in Sources */,
 				2A2DA29B263BC313001B6DC9 /* AppDelegate.swift in Sources */,
