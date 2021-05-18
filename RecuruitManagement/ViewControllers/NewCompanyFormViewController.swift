@@ -11,7 +11,7 @@ import Eureka
 class NewCompanyFormViewController: FormViewController {
     
     var companyName:String?
-    var companyURL:String?
+    var companyURL:URL?
     var aspiration:Int?
     
     override func viewDidLoad() {
@@ -26,14 +26,20 @@ class NewCompanyFormViewController: FormViewController {
                 }
             }
             
-            <<< TextRow(){ row in
+            <<< URLRow(){ row in
                 row.title = "URL"
                 row.placeholder = ""
             }.onChange() { row in
                 if let url = row.value {
-                    self.companyName = url
+                    self.companyURL = url
                 }
             }
+        
+            <<< SegmentedRow<String>() { row in
+                            row.title = "志望度"
+                            row.options = ["1","2","3","4","5"]
+                            }.onChange{[unowned self] row in
+                            }
     }
     /*
      // MARK: - Navigation
