@@ -24,14 +24,15 @@ class AccessData: UIViewController {
         return nil
     }
     
-    static func canUnwrapDatas(attitude: String? ...) -> Bool {
-        for i in 0...(attitude.count - 1) {
-            guard !(attitude[i]?.isEmpty ?? true) else {
-                print("Empty or nil ->\(i)")
-                return false
-            }
-        }
-        return true
+    static func canUnwrapDatas(dataArray: [String?]) -> Bool {
+        return dataArray.filter({$0?.isEmpty ?? true}).count == 0
+//        for i in 0...(attitude.count - 1) {
+//            guard !(attitude[i]?.isEmpty ?? true) else {
+//                print("Empty or nil ->\(i)")
+//                return false
+//            }
+//        }
+//        return true
     }
     
     static func saveNewCompany(name: String, url: URL, aspiration: String) -> Void {
@@ -51,10 +52,14 @@ class AccessData: UIViewController {
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
     
-    static func saveNewEvent(name: String, date:Date, locate:String) -> Void {
+    static func saveNewEvent(company:Company, name: String, date:Date, locate:String, memo:String? = nil) -> Void {
         let newEvent = Event(context: self.managedObjectContext)
         newEvent.eventName = name
         newEvent.eventLocate = locate
         newEvent.eventDate = date
+        if let eventMemo = memo {
+            newEvent.eventMemo = eventMemo
+        }
+        company.addToEvent(newEvent)
     }
 }

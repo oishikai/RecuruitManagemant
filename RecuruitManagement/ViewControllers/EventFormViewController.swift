@@ -15,6 +15,8 @@ class EventFormViewController: FormViewController{
     var eventLocate:String?
     var eventMemo:String?
     
+    var company:Company!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "イベント追加"
@@ -51,8 +53,11 @@ class EventFormViewController: FormViewController{
             <<< ButtonRow("フォームを送信") {row in
                 row.title = "イベント追加"
                 row.onCellSelection{[unowned self] ButtonCellOf, row in
-                    if AccessData.canUnwrapDatas(attitude: eventName,eventLocate) {
-                        
+                    if AccessData.canUnwrapDatas(dataArray: [eventName,eventLocate]) {
+                        AccessData.saveNewEvent(company: company, name: eventName!, date: eventDate!, locate: eventLocate!, memo: eventMemo)
+                        DispatchQueue.main.async {
+                            self.navigationController?.popViewController(animated: true)
+                        }
                     }
                 }
             }

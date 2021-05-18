@@ -41,6 +41,7 @@ class EventListViewController: UIViewController {
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "EventFormViewController", bundle: nil)
             let nextVC = storyboard.instantiateViewController(identifier: "EventFormViewController")as! EventFormViewController
+            nextVC.company = self.company
             self.navigationController?.pushViewController(nextVC, animated: true)
         }
     }
