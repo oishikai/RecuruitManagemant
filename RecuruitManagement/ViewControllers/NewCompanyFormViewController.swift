@@ -12,10 +12,12 @@ class NewCompanyFormViewController: FormViewController {
     
     var companyName:String?
     var companyURL:URL?
-    var aspiration:Int?
+    var aspiration:String?
+    var selectionStatus:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "企業を追加する"
         form +++ Section("会社の情報")
             <<< TextRow(){ row in
                 row.title = "企業名"
@@ -39,21 +41,31 @@ class NewCompanyFormViewController: FormViewController {
                 row.title = "志望度"
                 row.options = ["1","2","3","4","5"]
             }.onChange{[unowned self] row in
+                if let aspi = row.value {
+                    self.aspiration = aspi
+                }
             }
             
             <<< ActionSheetRow<String>(){ row in
                 row.title = "現在の状況"
                 row.options = ["未エントリー", "エントリー済","選考中"]
+            }.onChange{[unowned self] row in
+                if let status = row.value {
+                    self.selectionStatus = status
+                }
+            }
+            +++ Section("会社の追加を確定する")
+            
+            <<< ButtonRow("") {row in
+                row.title = "新しい会社を追加"
+                row.onCellSelection{[unowned self] ButtonCellOf, row in
+                    if AccessData.canUnwrapDatas(dataArray: [companyName,aspiration,selectionStatus]){
+                        AccessData.saveNewCompany(name: companyName!, url: companyURL!, aspiration: aspiration!, status: selectionStatus!)
+                        DispatchQueue.main.async {
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                    }
+                }
             }
     }
-    /*
-     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

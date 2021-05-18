@@ -3,6 +3,7 @@
     <entity name="Company" representedClassName="Company" syncable="YES" codeGenerationType="class">
         <attribute name="aspiration" optional="YES" attributeType="String"/>
         <attribute name="companyName" optional="YES" attributeType="String"/>
+        <attribute name="selectionStatus" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="URI"/>
         <relationship name="event" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Event" inverseName="company" inverseEntity="Event"/>
     </entity>
@@ -14,7 +15,7 @@
         <relationship name="company" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Company" inverseName="event" inverseEntity="Company"/>
     </entity>
     <elements>
-        <element name="Company" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="Company" positionX="-63" positionY="-18" width="128" height="104"/>
         <element name="Event" positionX="-63" positionY="9" width="128" height="104"/>
     </elements>
 </model>
