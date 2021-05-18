@@ -24,18 +24,12 @@ class AccessData: UIViewController {
         return nil
     }
     
-    static func canUnwrapDatas(name: String?, url: String?, aspiration: String?) -> Bool {
-        guard !(name?.isEmpty ?? true) else {
-            print("Name is Empty or nil")
-            return false
-        }
-        guard !(url?.isEmpty ?? true) else {
-            print("Name is Empty or nil")
-            return false
-        }
-        guard !(aspiration?.isEmpty ?? true) else {
-            print("Name is Empty or nil")
-            return false
+    static func canUnwrapDatas(attitude: String? ...) -> Bool {
+        for i in 0...(attitude.count - 1) {
+            guard !(attitude[i]?.isEmpty ?? true) else {
+                print("Empty or nil ->\(i)")
+                return false
+            }
         }
         return true
     }
