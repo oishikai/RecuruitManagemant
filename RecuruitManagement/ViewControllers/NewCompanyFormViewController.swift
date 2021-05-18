@@ -8,15 +8,35 @@
 import UIKit
 import Eureka
 
-class NewCompanyFormViewController: UIViewController {
-
+class NewCompanyFormViewController: FormViewController {
+    
+    var companyName:String?
+    var companyURL:String?
+    var aspiration:Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        form +++ Section("会社の情報")
+            <<< TextRow(){ row in
+                row.title = "企業名"
+                row.placeholder = ""
+            }.onChange() { row in
+                if let name = row.value {
+                    self.companyName = name
+                }
+            }
+            
+            <<< TextRow(){ row in
+                row.title = "URL"
+                row.placeholder = ""
+            }.onChange() { row in
+                if let url = row.value {
+                    self.companyName = url
+                }
+            }
     }
-    
-
     /*
-    // MARK: - Navigation
+     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
