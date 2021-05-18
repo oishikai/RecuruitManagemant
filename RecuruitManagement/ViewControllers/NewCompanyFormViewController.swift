@@ -34,12 +34,17 @@ class NewCompanyFormViewController: FormViewController {
                     self.companyURL = url
                 }
             }
-        
+            +++ Section("あなたの状況")
             <<< SegmentedRow<String>() { row in
-                            row.title = "志望度"
-                            row.options = ["1","2","3","4","5"]
-                            }.onChange{[unowned self] row in
-                            }
+                row.title = "志望度"
+                row.options = ["1","2","3","4","5"]
+            }.onChange{[unowned self] row in
+            }
+            
+            <<< ActionSheetRow<String>(){ row in
+                row.title = "現在の状況"
+                row.options = ["未エントリー", "エントリー済","選考中"]
+            }
     }
     /*
      // MARK: - Navigation
