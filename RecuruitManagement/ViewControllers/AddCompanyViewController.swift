@@ -54,7 +54,7 @@ class AddCompanyViewController: UIViewController ,UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        if AccessData.canUnwrapDatas(name: companyNameField.text, url: urlField.text, aspiration: aspirationField.text) {
+        if AccessData.canUnwrapDatas(dataArray: [companyNameField.text,urlField.text,aspirationField.text]){
             addCompButton.isEnabled = true
         }
         print("called")
@@ -81,7 +81,7 @@ extension AddCompanyViewController:  UIPickerViewDelegate, UIPickerViewDataSourc
     
     @objc func done() {
         self.aspirationField.endEditing(true)
-        if AccessData.canUnwrapDatas(name: companyNameField.text, url: urlField.text, aspiration: aspirationField.text) {
+        if AccessData.canUnwrapDatas(dataArray: [companyNameField.text,urlField.text,aspirationField.text]){
             addCompButton.isEnabled = true
         }
     }

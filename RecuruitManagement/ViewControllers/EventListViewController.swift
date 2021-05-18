@@ -28,10 +28,19 @@ class EventListViewController: UIViewController {
         eventTable.reloadData()
     }
     
+//    @objc func addBarButtonTapped(_ sender: UIBarButtonItem) {
+//        DispatchQueue.main.async {
+//            let storyboard = UIStoryboard(name: "AddEventViewController", bundle: nil)
+//            let nextVC = storyboard.instantiateViewController(identifier: "AddEventViewController")as! AddEventViewController
+//            nextVC.company = self.company
+//            self.navigationController?.pushViewController(nextVC, animated: true)
+//        }
+//    }
+    
     @objc func addBarButtonTapped(_ sender: UIBarButtonItem) {
         DispatchQueue.main.async {
-            let storyboard = UIStoryboard(name: "AddEventViewController", bundle: nil)
-            let nextVC = storyboard.instantiateViewController(identifier: "AddEventViewController")as! AddEventViewController
+            let storyboard = UIStoryboard(name: "EventFormViewController", bundle: nil)
+            let nextVC = storyboard.instantiateViewController(identifier: "EventFormViewController")as! EventFormViewController
             nextVC.company = self.company
             self.navigationController?.pushViewController(nextVC, animated: true)
         }

@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A0318772652C3F600CF21E7 /* EventFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0318762652C3F600CF21E7 /* EventFormViewController.swift */; };
+		2A0318792652C4E300CF21E7 /* EventFormViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A0318782652C4E300CF21E7 /* EventFormViewController.storyboard */; };
 		2A10CB50264FB4F200AD1EA9 /* AddEventViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A10CB4F264FB4F200AD1EA9 /* AddEventViewController.storyboard */; };
 		2A10CB52264FB50E00AD1EA9 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A10CB51264FB50E00AD1EA9 /* AddEventViewController.swift */; };
 		2A2DA29B263BC313001B6DC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DA29A263BC313001B6DC9 /* AppDelegate.swift */; };
@@ -23,6 +25,9 @@
 		2AA05DFC264E055A004546F8 /* AccessData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA05DFB264E055A004546F8 /* AccessData.swift */; };
 		2AFDE846264F854800E6D5DF /* EventListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AFDE845264F854800E6D5DF /* EventListViewController.storyboard */; };
 		2AFDE848264F857500E6D5DF /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDE847264F857500E6D5DF /* EventListViewController.swift */; };
+		2BD761FC9AF310E29C8916F0 /* Pods_RecuruitManagement_RecuruitManagementUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38946592EAFB9DFB0B169727 /* Pods_RecuruitManagement_RecuruitManagementUITests.framework */; };
+		823286396E7A335FFEEF22A9 /* Pods_RecuruitManagementTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6501894CAF6FC25A4BC24825 /* Pods_RecuruitManagementTests.framework */; };
+		8EDE74C056A9DC1098BFE1F7 /* Pods_RecuruitManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804B4658D988BE19162C859D /* Pods_RecuruitManagement.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0050DF7BAED02F7DD36BDFA6 /* Pods-RecuruitManagement.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecuruitManagement.release.xcconfig"; path = "Target Support Files/Pods-RecuruitManagement/Pods-RecuruitManagement.release.xcconfig"; sourceTree = "<group>"; };
+		14B57F25EBAF4E9088452C85 /* Pods-RecuruitManagementTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecuruitManagementTests.release.xcconfig"; path = "Target Support Files/Pods-RecuruitManagementTests/Pods-RecuruitManagementTests.release.xcconfig"; sourceTree = "<group>"; };
+		2A0318762652C3F600CF21E7 /* EventFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFormViewController.swift; sourceTree = "<group>"; };
+		2A0318782652C4E300CF21E7 /* EventFormViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventFormViewController.storyboard; sourceTree = "<group>"; };
 		2A10CB4F264FB4F200AD1EA9 /* AddEventViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddEventViewController.storyboard; sourceTree = "<group>"; };
 		2A10CB51264FB50E00AD1EA9 /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
 		2A2DA297263BC313001B6DC9 /* RecuruitManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecuruitManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +74,13 @@
 		2AA05DFB264E055A004546F8 /* AccessData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessData.swift; sourceTree = "<group>"; };
 		2AFDE845264F854800E6D5DF /* EventListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventListViewController.storyboard; sourceTree = "<group>"; };
 		2AFDE847264F857500E6D5DF /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
+		38946592EAFB9DFB0B169727 /* Pods_RecuruitManagement_RecuruitManagementUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecuruitManagement_RecuruitManagementUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C27F6FDDA2ED704C1D0182B /* Pods-RecuruitManagementTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecuruitManagementTests.debug.xcconfig"; path = "Target Support Files/Pods-RecuruitManagementTests/Pods-RecuruitManagementTests.debug.xcconfig"; sourceTree = "<group>"; };
+		541E6409F892382D17477F20 /* Pods-RecuruitManagement-RecuruitManagementUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecuruitManagement-RecuruitManagementUITests.debug.xcconfig"; path = "Target Support Files/Pods-RecuruitManagement-RecuruitManagementUITests/Pods-RecuruitManagement-RecuruitManagementUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6501894CAF6FC25A4BC24825 /* Pods_RecuruitManagementTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecuruitManagementTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67FE83CF11620E2DED63D85C /* Pods-RecuruitManagement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecuruitManagement.debug.xcconfig"; path = "Target Support Files/Pods-RecuruitManagement/Pods-RecuruitManagement.debug.xcconfig"; sourceTree = "<group>"; };
+		804B4658D988BE19162C859D /* Pods_RecuruitManagement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecuruitManagement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2D71632E4EDDF6449112122 /* Pods-RecuruitManagement-RecuruitManagementUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecuruitManagement-RecuruitManagementUITests.release.xcconfig"; path = "Target Support Files/Pods-RecuruitManagement-RecuruitManagementUITests/Pods-RecuruitManagement-RecuruitManagementUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EDE74C056A9DC1098BFE1F7 /* Pods_RecuruitManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				823286396E7A335FFEEF22A9 /* Pods_RecuruitManagementTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BD761FC9AF310E29C8916F0 /* Pods_RecuruitManagement_RecuruitManagementUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +118,8 @@
 				2A2DA2B3263BC314001B6DC9 /* RecuruitManagementTests */,
 				2A2DA2BE263BC314001B6DC9 /* RecuruitManagementUITests */,
 				2A2DA298263BC313001B6DC9 /* Products */,
+				4FB23C9B7ECD519531B62DA0 /* Pods */,
+				4FF10379C9D1B5C063DFD697 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,6 +174,7 @@
 				2A845795264D6C3A00D3691C /* AddCompanyViewController.storyboard */,
 				2AFDE845264F854800E6D5DF /* EventListViewController.storyboard */,
 				2A10CB4F264FB4F200AD1EA9 /* AddEventViewController.storyboard */,
+				2A0318782652C4E300CF21E7 /* EventFormViewController.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,8 +186,32 @@
 				2A845797264D6C5D00D3691C /* AddCompanyViewController.swift */,
 				2AFDE847264F857500E6D5DF /* EventListViewController.swift */,
 				2A10CB51264FB50E00AD1EA9 /* AddEventViewController.swift */,
+				2A0318762652C3F600CF21E7 /* EventFormViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4FB23C9B7ECD519531B62DA0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				67FE83CF11620E2DED63D85C /* Pods-RecuruitManagement.debug.xcconfig */,
+				0050DF7BAED02F7DD36BDFA6 /* Pods-RecuruitManagement.release.xcconfig */,
+				541E6409F892382D17477F20 /* Pods-RecuruitManagement-RecuruitManagementUITests.debug.xcconfig */,
+				A2D71632E4EDDF6449112122 /* Pods-RecuruitManagement-RecuruitManagementUITests.release.xcconfig */,
+				3C27F6FDDA2ED704C1D0182B /* Pods-RecuruitManagementTests.debug.xcconfig */,
+				14B57F25EBAF4E9088452C85 /* Pods-RecuruitManagementTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4FF10379C9D1B5C063DFD697 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				804B4658D988BE19162C859D /* Pods_RecuruitManagement.framework */,
+				38946592EAFB9DFB0B169727 /* Pods_RecuruitManagement_RecuruitManagementUITests.framework */,
+				6501894CAF6FC25A4BC24825 /* Pods_RecuruitManagementTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,9 +221,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A2DA2C4263BC314001B6DC9 /* Build configuration list for PBXNativeTarget "RecuruitManagement" */;
 			buildPhases = (
+				3218F340DEBB639928BCD7C9 /* [CP] Check Pods Manifest.lock */,
 				2A2DA293263BC313001B6DC9 /* Sources */,
 				2A2DA294263BC313001B6DC9 /* Frameworks */,
 				2A2DA295263BC313001B6DC9 /* Resources */,
+				121788FAB985DD289690B664 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -192,6 +240,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A2DA2C7263BC314001B6DC9 /* Build configuration list for PBXNativeTarget "RecuruitManagementTests" */;
 			buildPhases = (
+				93DB55729D1F6E7CD422BF43 /* [CP] Check Pods Manifest.lock */,
 				2A2DA2AC263BC314001B6DC9 /* Sources */,
 				2A2DA2AD263BC314001B6DC9 /* Frameworks */,
 				2A2DA2AE263BC314001B6DC9 /* Resources */,
@@ -210,9 +259,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A2DA2CA263BC314001B6DC9 /* Build configuration list for PBXNativeTarget "RecuruitManagementUITests" */;
 			buildPhases = (
+				10D8C3414F185CCE145A7C6B /* [CP] Check Pods Manifest.lock */,
 				2A2DA2B7263BC314001B6DC9 /* Sources */,
 				2A2DA2B8263BC314001B6DC9 /* Frameworks */,
 				2A2DA2B9263BC314001B6DC9 /* Resources */,
+				EFB572B7DE768C9FE75D85B5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -273,6 +324,7 @@
 			files = (
 				2A10CB50264FB4F200AD1EA9 /* AddEventViewController.storyboard in Resources */,
 				2A845796264D6C3A00D3691C /* AddCompanyViewController.storyboard in Resources */,
+				2A0318792652C4E300CF21E7 /* EventFormViewController.storyboard in Resources */,
 				2AFDE846264F854800E6D5DF /* EventListViewController.storyboard in Resources */,
 				2A2DA2AA263BC314001B6DC9 /* LaunchScreen.storyboard in Resources */,
 				2A2DA2A7263BC314001B6DC9 /* Assets.xcassets in Resources */,
@@ -296,6 +348,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		10D8C3414F185CCE145A7C6B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RecuruitManagement-RecuruitManagementUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		121788FAB985DD289690B664 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecuruitManagement/Pods-RecuruitManagement-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecuruitManagement/Pods-RecuruitManagement-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecuruitManagement/Pods-RecuruitManagement-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3218F340DEBB639928BCD7C9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RecuruitManagement-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93DB55729D1F6E7CD422BF43 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RecuruitManagementTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFB572B7DE768C9FE75D85B5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecuruitManagement-RecuruitManagementUITests/Pods-RecuruitManagement-RecuruitManagementUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecuruitManagement-RecuruitManagementUITests/Pods-RecuruitManagement-RecuruitManagementUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecuruitManagement-RecuruitManagementUITests/Pods-RecuruitManagement-RecuruitManagementUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2A2DA293263BC313001B6DC9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -304,6 +459,7 @@
 				2A845798264D6C5D00D3691C /* AddCompanyViewController.swift in Sources */,
 				2A10CB52264FB50E00AD1EA9 /* AddEventViewController.swift in Sources */,
 				2AFDE848264F857500E6D5DF /* EventListViewController.swift in Sources */,
+				2A0318772652C3F600CF21E7 /* EventFormViewController.swift in Sources */,
 				2AA05DFC264E055A004546F8 /* AccessData.swift in Sources */,
 				2A2DA29F263BC313001B6DC9 /* RecuruitListViewController.swift in Sources */,
 				2A2DA29B263BC313001B6DC9 /* AppDelegate.swift in Sources */,
@@ -481,6 +637,7 @@
 		};
 		2A2DA2C5263BC314001B6DC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67FE83CF11620E2DED63D85C /* Pods-RecuruitManagement.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -500,6 +657,7 @@
 		};
 		2A2DA2C6263BC314001B6DC9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0050DF7BAED02F7DD36BDFA6 /* Pods-RecuruitManagement.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -519,6 +677,7 @@
 		};
 		2A2DA2C8263BC314001B6DC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C27F6FDDA2ED704C1D0182B /* Pods-RecuruitManagementTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -541,6 +700,7 @@
 		};
 		2A2DA2C9263BC314001B6DC9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14B57F25EBAF4E9088452C85 /* Pods-RecuruitManagementTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -563,6 +723,7 @@
 		};
 		2A2DA2CB263BC314001B6DC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 541E6409F892382D17477F20 /* Pods-RecuruitManagement-RecuruitManagementUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -583,6 +744,7 @@
 		};
 		2A2DA2CC263BC314001B6DC9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2D71632E4EDDF6449112122 /* Pods-RecuruitManagement-RecuruitManagementUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
