@@ -4,7 +4,7 @@
         <attribute name="aspiration" optional="YES" attributeType="String"/>
         <attribute name="companyName" optional="YES" attributeType="String"/>
         <attribute name="selectionStatus" optional="YES" attributeType="String"/>
-        <attribute name="url" optional="YES" attributeType="URI"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
         <relationship name="event" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Event" inverseName="company" inverseEntity="Event"/>
     </entity>
     <entity name="Event" representedClassName="Event" syncable="YES" codeGenerationType="class">

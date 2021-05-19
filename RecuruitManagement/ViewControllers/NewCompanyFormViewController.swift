@@ -11,7 +11,7 @@ import Eureka
 class NewCompanyFormViewController: FormViewController {
     
     var companyName:String?
-    var companyURL:URL?
+    var companyURL:String?
     var aspiration:String?
     var selectionStatus:String?
     
@@ -28,7 +28,7 @@ class NewCompanyFormViewController: FormViewController {
                 }
             }
             
-            <<< URLRow(){ row in
+            <<< TextRow(){ row in
                 row.title = "URL"
                 row.placeholder = ""
             }.onChange() { row in
