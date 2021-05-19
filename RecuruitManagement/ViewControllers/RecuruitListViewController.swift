@@ -27,6 +27,11 @@ class RecuruitListViewController: UIViewController {
             return
         }
         companies = comp!
+        
+        let nib = UINib(nibName: RecuruitListTableViewCell.cellIdentifier, bundle: nil)
+        companyTableView.register(nib, forCellReuseIdentifier: RecuruitListTableViewCell.cellIdentifier)
+        companyTableView.rowHeight = UITableView.automaticDimension
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,8 +60,8 @@ extension RecuruitListViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = companies[indexPath.row].companyName
+        let cell = tableView.dequeueReusableCell(withIdentifier: RecuruitListTableViewCell.cellIdentifier, for: indexPath) as! RecuruitListTableViewCell
+        cell.setup(company: companies[indexPath.row])
         return cell
     }
     

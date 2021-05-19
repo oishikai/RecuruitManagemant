@@ -14,22 +14,15 @@ class RecuruitListTableViewCell: UITableViewCell {
     @IBOutlet weak var selectionStatus: UILabel!
     @IBOutlet weak var starImage: UIImageView!
     
+    var aspiration = ""
+    static let cellIdentifier = String(describing: RecuruitListTableViewCell.self)
+
     let star = UIImage(named: "AspirationStar")
-//    starImage.image = star
-    
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        let star = UIImage(named: "AspirationStar")
-//        starImage.image = star
-//    }
-//
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//    }
+
     func setup(company:Company) {
         companyName.text = company.companyName
         selectionStatus.text = company.selectionStatus
-        
+        aspiration = company.aspiration!
         
     }
     
