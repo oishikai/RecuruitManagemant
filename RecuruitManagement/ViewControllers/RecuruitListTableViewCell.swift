@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Nuke
 
 class RecuruitListTableViewCell: UITableViewCell {
 
@@ -36,6 +37,10 @@ class RecuruitListTableViewCell: UITableViewCell {
         star4Image.image = star
         star5Image.image = star
         
+//        print(company.url)
+//        if let iconURL = URL(string: "http://www.google.com/s2/favicons?domain=\(company.url)"){
+//            Nuke.loadImage(with: iconURL, into: companyIcon)
+        }
     }
     
 }

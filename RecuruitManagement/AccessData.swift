@@ -28,7 +28,7 @@ class AccessData: UIViewController {
         return dataArray.filter({$0?.isEmpty ?? true}).count == 0
     }
     
-    static func saveNewCompany(name: String, url: URL, aspiration: String, status:String) -> Void {
+    static func saveNewCompany(name: String, url: String, aspiration: String, status:String) -> Void {
         var companies:[Company] = []
         let comp = AccessData.getCompanies()
         guard comp != nil else {
