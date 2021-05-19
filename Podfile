@@ -7,6 +7,8 @@ target 'RecuruitManagement' do
 
   # Pods for RecuruitManagement
   pod 'Eureka'
+  pod 'FaviconFinder', '~> 2.3.0'
+
 
   target 'RecuruitManagementTests' do
     inherit! :search_paths
