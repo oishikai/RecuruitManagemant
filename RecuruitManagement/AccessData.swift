@@ -26,13 +26,6 @@ class AccessData: UIViewController {
     
     static func canUnwrapDatas(dataArray: [String?]) -> Bool {
         return dataArray.filter({$0?.isEmpty ?? true}).count == 0
-//        for i in 0...(attitude.count - 1) {
-//            guard !(attitude[i]?.isEmpty ?? true) else {
-//                print("Empty or nil ->\(i)")
-//                return false
-//            }
-//        }
-//        return true
     }
     
     static func saveNewCompany(name: String, url: URL, aspiration: String, status:String) -> Void {

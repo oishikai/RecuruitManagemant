@@ -42,6 +42,12 @@
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="companyIcon" destination="dLO-cT-PUy" id="Tk4-if-cka"/>
+                <outlet property="companyName" destination="RCK-85-Tvn" id="Oom-qa-Sip"/>
+                <outlet property="selectionStatus" destination="WKf-kE-yIH" id="NC9-KS-fuw"/>
+                <outlet property="starImage" destination="HHu-vw-KkW" id="hdM-N2-EHB"/>
+            </connections>
             <point key="canvasLocation" x="90.579710144927546" y="22.767857142857142"/>
         </tableViewCell>
     </objects>
