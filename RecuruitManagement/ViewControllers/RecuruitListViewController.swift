@@ -86,7 +86,9 @@ extension RecuruitListViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let com = self.companies[indexPath.row]
         companies.remove(at: indexPath.row)
+        AccessData.deleteCompany(company: com)
         tableView.deleteRows(at: [indexPath], with: .automatic)
     }
 

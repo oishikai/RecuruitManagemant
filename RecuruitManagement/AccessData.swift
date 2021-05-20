@@ -57,15 +57,18 @@ class AccessData: UIViewController {
         company.addToEvent(newEvent)
     }
     
-    static func deleteCompany(row: Int){
-        var companies:[Company] = []
-        let comp = AccessData.getCompanies()
-        guard comp != nil else {
-            print("accessError")
-            return
+    static func deleteCompany(company: Company){
+        let dataCondition = NSFetchRequest<NSFetchRequestResult>(entityName: "Company")
+        let predict = NSPredicate(format: "%K = %@","companyName", company.companyName!)
+        dataCondition.predicate = predict
+        do {
+            let results = try managedObjectContext.fetch(dataCondition)
+            for myData in results {
+                managedObjectContext.delete(myData as! Company)
+                }
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        }catch{
+            
         }
-        companies = comp!
-        companies.remove(at: row)
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
 }
