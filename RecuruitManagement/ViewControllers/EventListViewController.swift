@@ -24,6 +24,10 @@ class EventListViewController: UIViewController {
         
         events = company.event
         mutableSetEvents = NSMutableSet.init(set: events!)
+        
+        let nib = UINib(nibName: EventListTableViewCell.cellIdentifier, bundle: nil)
+        eventTable.register(nib, forCellReuseIdentifier: EventListTableViewCell.cellIdentifier)
+        eventTable.rowHeight = UITableView.automaticDimension
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -48,9 +52,9 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: EventListTableViewCell.cellIdentifier, for: indexPath) as! EventListTableViewCell
         let events = company.event?.allObjects as! [Event]
-        cell.textLabel?.text = events[indexPath.row].eventName
+        cell.setup(event: events[indexPath.row])
         return cell
     }
 }

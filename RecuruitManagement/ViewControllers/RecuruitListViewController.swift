@@ -32,7 +32,6 @@ class RecuruitListViewController: UIViewController {
         let nib = UINib(nibName: RecuruitListTableViewCell.cellIdentifier, bundle: nil)
         companyTableView.register(nib, forCellReuseIdentifier: RecuruitListTableViewCell.cellIdentifier)
         companyTableView.rowHeight = UITableView.automaticDimension
-
     }
     
     override func viewDidAppear(_ animated: Bool) {

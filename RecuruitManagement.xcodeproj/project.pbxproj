@@ -173,6 +173,15 @@
 			path = RecuruitManagementUITests;
 			sourceTree = "<group>";
 		};
+		2A4A8C122656B6180029226E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2A0318812654188600CF21E7 /* RecuruitListTableViewCell.swift */,
+				2A4A8C0E2656AE2F0029226E /* EventListTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		2A845799264D6D7300D3691C /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,8 +202,7 @@
 				2A03187A265408C900CF21E7 /* NewCompanyFormViewController.swift */,
 				2AFDE847264F857500E6D5DF /* EventListViewController.swift */,
 				2A0318762652C3F600CF21E7 /* NewEventFormViewController.swift */,
-				2A0318812654188600CF21E7 /* RecuruitListTableViewCell.swift */,
-				2A4A8C0E2656AE2F0029226E /* EventListTableViewCell.swift */,
+				2A4A8C122656B6180029226E /* Cell */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
