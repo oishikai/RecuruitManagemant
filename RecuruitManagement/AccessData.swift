@@ -56,4 +56,19 @@ class AccessData: UIViewController {
         }
         company.addToEvent(newEvent)
     }
+    
+    static func deleteCompany(company: Company){
+        let dataCondition = NSFetchRequest<NSFetchRequestResult>(entityName: "Company")
+        let predict = NSPredicate(format: "%K = %@","companyName", company.companyName!)
+        dataCondition.predicate = predict
+        do {
+            let results = try managedObjectContext.fetch(dataCondition)
+            for myData in results {
+                managedObjectContext.delete(myData as! Company)
+                }
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        }catch{
+            
+        }
+    }
 }

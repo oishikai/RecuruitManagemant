@@ -12,13 +12,18 @@ class EventListViewController: UIViewController {
     @IBOutlet weak var eventTable: UITableView!
     var addBarButtonItem: UIBarButtonItem!
     
-    var company:Company!
+    var company: Company = Company()
+    var events:NSSet?
+    var mutableSetEvents:NSMutableSet = NSMutableSet()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         addBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonTapped(_:)))
         self.navigationItem.rightBarButtonItems = [addBarButtonItem]
+        
+        events = company.event
+        mutableSetEvents = NSMutableSet.init(set: events!)
     }
     
     override func viewDidAppear(_ animated: Bool) {

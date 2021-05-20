@@ -41,30 +41,27 @@ class RecuruitListTableViewCell: UITableViewCell {
         let intAspitarion = Int(string: company.aspiration!)
         switch intAspitarion {
         case 1:
-            print(company.aspiration!)
             star2Image.isHidden = true
             star3Image.isHidden = true
             star4Image.isHidden = true
             star5Image.isHidden = true
         case 2:
-            print(company.aspiration!)
             star3Image.isHidden = true
             star4Image.isHidden = true
             star5Image.isHidden = true
         case 3:
-            print(company.aspiration!)
             star4Image.isHidden = true
             star5Image.isHidden = true
         case 4:
             star5Image.isHidden = true
-        default : print(company.aspiration!)
-
+        default :
+            star5Image.isHidden = false
+            
         }
         if let iconURL = URL(string:company.url!){
             FaviconFinder(url: iconURL).downloadFavicon { result in
                 switch result {
                 case .success(let favicon):
-                    print("URL of Favicon: \(favicon.url)")
                     self.companyIcon.image = favicon.image
                 case .failure(let error):
                     print("Error: \(error)")

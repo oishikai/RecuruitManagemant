@@ -18,6 +18,7 @@ class RecuruitListViewController: UIViewController {
         super.viewDidLoad()
         self.title = "企業一覧"
         
+        navigationItem.leftBarButtonItem = editButtonItem
         addBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonTapped(_:)))
         self.navigationItem.rightBarButtonItems = [addBarButtonItem]
         
@@ -43,6 +44,11 @@ class RecuruitListViewController: UIViewController {
         }
         companies = comp!
         companyTableView.reloadData()
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: true)
+        companyTableView.isEditing = editing
     }
     
     @objc func addBarButtonTapped(_ sender: UIBarButtonItem) {
@@ -74,5 +80,24 @@ extension RecuruitListViewController: UITableViewDelegate, UITableViewDataSource
             nextVC.company = self.companies[indexPath.row]
         }
     }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let com = self.companies[indexPath.row]
+        companies.remove(at: indexPath.row)
+        AccessData.deleteCompany(company: com)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        if tableView.isEditing {
+            return UITableViewCell.EditingStyle.delete
+            } else {
+                return UITableViewCell.EditingStyle.none
+            }
 
+    }
 }
