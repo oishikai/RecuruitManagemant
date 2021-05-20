@@ -91,5 +91,13 @@ extension RecuruitListViewController: UITableViewDelegate, UITableViewDataSource
         AccessData.deleteCompany(company: com)
         tableView.deleteRows(at: [indexPath], with: .automatic)
     }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        if tableView.isEditing {
+            return UITableViewCell.EditingStyle.delete
+            } else {
+                return UITableViewCell.EditingStyle.none
+            }
 
+    }
 }
