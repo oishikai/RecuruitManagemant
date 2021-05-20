@@ -56,4 +56,16 @@ class AccessData: UIViewController {
         }
         company.addToEvent(newEvent)
     }
+    
+    static func deleteCompany(row: Int){
+        var companies:[Company] = []
+        let comp = AccessData.getCompanies()
+        guard comp != nil else {
+            print("accessError")
+            return
+        }
+        companies = comp!
+        companies.remove(at: row)
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+    }
 }
