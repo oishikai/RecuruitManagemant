@@ -19,13 +19,13 @@ class EventListTableViewCell: UITableViewCell {
     @IBOutlet weak var eventLocateLabel: UILabel!
     
     @IBOutlet weak var eventMemoField: UITextView!
-    static var formatt = "yyyy年MM月dd日 HH時mm分"
+    static var formatt = "MM月dd日HH時mm分"
     static let cellIdentifier = String(describing: EventListTableViewCell.self)
     let star = UIImage(named: "AspirationStar")
     
     func setup(event:Event) {
         eventNameLabel.text = event.eventName
-        let strDate = stringFromDate(date: event.eventDate!, format: "yyyy年MM月dd日 HH時mm分")
+        let strDate = stringFromDate(date: event.eventDate!, format: "MM/dd HH:mm")
         eventDateLabel.text = strDate
         eventLocateLabel.text = event.eventLocate
         eventIcon.image = star
