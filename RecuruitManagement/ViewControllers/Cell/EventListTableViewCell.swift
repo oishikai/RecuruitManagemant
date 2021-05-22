@@ -34,6 +34,8 @@ class EventListTableViewCell: UITableViewCell {
         eventLocateLabel.text = event.eventLocate
         if event.eventMemo != nil {
             eventMemoLabel.text = event.eventMemo
+        }else {
+            eventMemoLabel.text = "---"
         }
         eventIcon.image = NewEventFormViewController.EventType(rawValue: event.eventType)!.image
         dateIcon.image = clock

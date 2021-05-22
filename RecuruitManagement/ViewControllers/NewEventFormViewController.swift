@@ -46,6 +46,10 @@ class NewEventFormViewController: FormViewController {
             
             <<< TextAreaRow(){ row in
                 row.placeholder = "詳細を入力する"
+            }.onChange() { row in
+                if let memo = row.value {
+                    self.eventMemo = memo
+                }
             }
             
             +++ Section("イベントの追加を確定する")
@@ -122,7 +126,6 @@ class NewEventFormViewController: FormViewController {
     func getEventType(name: String) -> EventType? {
         let types = EventType.allCases.compactMap({$0.name})
         if let index = types.firstIndex(of: name) {
-            let a = EventType.RawValue.self
             return EventType.allCases[index]
         }
         return nil
