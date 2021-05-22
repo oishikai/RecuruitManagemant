@@ -22,6 +22,8 @@
 		2A2DA2AA263BC314001B6DC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A2DA2A8263BC314001B6DC9 /* LaunchScreen.storyboard */; };
 		2A2DA2B5263BC314001B6DC9 /* RecuruitManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DA2B4263BC314001B6DC9 /* RecuruitManagementTests.swift */; };
 		2A2DA2C0263BC314001B6DC9 /* RecuruitManagementUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DA2BF263BC314001B6DC9 /* RecuruitManagementUITests.swift */; };
+		2A4A8C102656AE2F0029226E /* EventListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4A8C0E2656AE2F0029226E /* EventListTableViewCell.swift */; };
+		2A4A8C112656AE2F0029226E /* EventListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A4A8C0F2656AE2F0029226E /* EventListTableViewCell.xib */; };
 		2A9AEC282654A7E8006E6DB7 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 2A9AEC272654A7E8006E6DB7 /* Nuke */; };
 		2AA05DFC264E055A004546F8 /* AccessData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA05DFB264E055A004546F8 /* AccessData.swift */; };
 		2AFDE846264F854800E6D5DF /* EventListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AFDE845264F854800E6D5DF /* EventListViewController.storyboard */; };
@@ -72,6 +74,8 @@
 		2A2DA2BB263BC314001B6DC9 /* RecuruitManagementUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecuruitManagementUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2DA2BF263BC314001B6DC9 /* RecuruitManagementUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecuruitManagementUITests.swift; sourceTree = "<group>"; };
 		2A2DA2C1263BC314001B6DC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A4A8C0E2656AE2F0029226E /* EventListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListTableViewCell.swift; sourceTree = "<group>"; };
+		2A4A8C0F2656AE2F0029226E /* EventListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventListTableViewCell.xib; sourceTree = "<group>"; };
 		2AA05DFB264E055A004546F8 /* AccessData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessData.swift; sourceTree = "<group>"; };
 		2AFDE845264F854800E6D5DF /* EventListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventListViewController.storyboard; sourceTree = "<group>"; };
 		2AFDE847264F857500E6D5DF /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +173,15 @@
 			path = RecuruitManagementUITests;
 			sourceTree = "<group>";
 		};
+		2A4A8C122656B6180029226E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2A0318812654188600CF21E7 /* RecuruitListTableViewCell.swift */,
+				2A4A8C0E2656AE2F0029226E /* EventListTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		2A845799264D6D7300D3691C /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +190,7 @@
 				2AFDE845264F854800E6D5DF /* EventListViewController.storyboard */,
 				2A0318782652C4E300CF21E7 /* NewEventFormViewController.storyboard */,
 				2A0318822654188600CF21E7 /* RecuruitListTableViewCell.xib */,
+				2A4A8C0F2656AE2F0029226E /* EventListTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -188,7 +202,7 @@
 				2A03187A265408C900CF21E7 /* NewCompanyFormViewController.swift */,
 				2AFDE847264F857500E6D5DF /* EventListViewController.swift */,
 				2A0318762652C3F600CF21E7 /* NewEventFormViewController.swift */,
-				2A0318812654188600CF21E7 /* RecuruitListTableViewCell.swift */,
+				2A4A8C122656B6180029226E /* Cell */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -334,6 +348,7 @@
 				2AFDE846264F854800E6D5DF /* EventListViewController.storyboard in Resources */,
 				2A2DA2AA263BC314001B6DC9 /* LaunchScreen.storyboard in Resources */,
 				2A2DA2A7263BC314001B6DC9 /* Assets.xcassets in Resources */,
+				2A4A8C112656AE2F0029226E /* EventListTableViewCell.xib in Resources */,
 				2A03187D2654098600CF21E7 /* NewCompanyFormViewController.storyboard in Resources */,
 				2A2DA2A2263BC313001B6DC9 /* RecuruitListViewController.storyboard in Resources */,
 				2A0318842654188600CF21E7 /* RecuruitListTableViewCell.xib in Resources */,
@@ -468,6 +483,7 @@
 				2AFDE848264F857500E6D5DF /* EventListViewController.swift in Sources */,
 				2A0318832654188600CF21E7 /* RecuruitListTableViewCell.swift in Sources */,
 				2A0318772652C3F600CF21E7 /* NewEventFormViewController.swift in Sources */,
+				2A4A8C102656AE2F0029226E /* EventListTableViewCell.swift in Sources */,
 				2AA05DFC264E055A004546F8 /* AccessData.swift in Sources */,
 				2A2DA29F263BC313001B6DC9 /* RecuruitListViewController.swift in Sources */,
 				2A2DA29B263BC313001B6DC9 /* AppDelegate.swift in Sources */,

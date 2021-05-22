@@ -10,7 +10,7 @@ import Eureka
 
 class NewEventFormViewController: FormViewController {
     
-    var eventName:String?
+    var eventType:EventType?
     var eventDate:Date?
     var eventLocate:String?
     var eventMemo:String?
@@ -23,10 +23,9 @@ class NewEventFormViewController: FormViewController {
         form +++ Section("イベントの情報")
             <<< PushRow<String> {
                 $0.title = "イベント内容"
-                $0.options = ["会社説明会","座談会","筆記試験","適正検査","実技課題","プレゼン発表",
-                              "グループワーク","グループディスカッション","集団面接","面接","最終面接"]
+                $0.options = EventType.allCases.compactMap({$0.name})
             }.onChange() { row in
-                self.eventName = row.value!
+                self.eventType = self.getEventType(name: row.value!)
             }
             
             <<< DateTimeInlineRow(){
@@ -53,13 +52,79 @@ class NewEventFormViewController: FormViewController {
             <<< ButtonRow("フォームを送信") {row in
                 row.title = "イベント追加"
                 row.onCellSelection{[unowned self] ButtonCellOf, row in
-                    if AccessData.canUnwrapDatas(dataArray: [eventName,eventLocate]) {
-                        AccessData.saveNewEvent(company: company, name: eventName!, date: eventDate!, locate: eventLocate!, memo: eventMemo)
+                    if AccessData.canUnwrapDatas(dataArray: [eventLocate]) {
+                        AccessData.saveNewEvent(company: company, type: eventType!, date: eventDate!, locate: eventLocate!, memo: eventMemo)
                         DispatchQueue.main.async {
                             self.navigationController?.popViewController(animated: true)
                         }
                     }
                 }
             }
+    }
+    
+    enum EventType: Int16, CaseIterable{
+        case informationSession
+        case symposium
+        case writtenTest
+        case aptitudeTest
+        case practicaltask
+        case presentation
+        case groupWork
+        case groupDiscussion
+        case groupInterview
+        case interview
+        case finalInterview
+        
+        var name: String {
+            switch self {
+            case .informationSession: return "会社説明会"
+            case .symposium: return "座談会"
+            case .writtenTest: return "筆記試験"
+            case .aptitudeTest: return "適正検査"
+            case .practicaltask: return "実技課題"
+            case .presentation: return "プレゼン発表"
+            case .groupWork: return "グループワーク"
+            case .groupDiscussion: return "グループディスカッション"
+            case .groupInterview: return "集団面接"
+            case .interview: return "面接"
+            case .finalInterview: return "最終面接"
+            }
+        }
+        
+        var image: UIImage{
+            switch self {
+            case .informationSession:
+                return UIImage(named: "Session")!
+            case .symposium:
+                return UIImage(named: "Symposium")!
+            case .writtenTest:
+                return UIImage(named: "Test")!
+            case .aptitudeTest:
+                return UIImage(named: "Test")!
+            case .practicaltask:
+                return UIImage(named: "Test")!
+            case .presentation:
+                return UIImage(named: "Session")!
+            case .groupWork:
+                return UIImage(named: "Discuss")!
+            case .groupDiscussion:
+                return UIImage(named: "Discuss")!
+            case .groupInterview:
+                return UIImage(named: "Interview")!
+            case .interview:
+                return UIImage(named: "Interview")!
+            case .finalInterview:
+                return UIImage(named: "Interview")!                
+            }
+        }
+    }
+    
+    func getEventType(name: String) -> EventType? {
+        let types = EventType.allCases.compactMap({$0.name})
+        if let index = types.firstIndex(of: name) {
+            let a = EventType.RawValue.self
+            return EventType.allCases[index]
+        }
+        return nil
     }
 }

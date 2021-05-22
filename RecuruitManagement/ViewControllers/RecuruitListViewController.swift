@@ -13,7 +13,6 @@ class RecuruitListViewController: UIViewController {
     var addBarButtonItem: UIBarButtonItem!
 
     private var companies:[Company] = []
-        
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "企業一覧"
@@ -32,7 +31,6 @@ class RecuruitListViewController: UIViewController {
         let nib = UINib(nibName: RecuruitListTableViewCell.cellIdentifier, bundle: nil)
         companyTableView.register(nib, forCellReuseIdentifier: RecuruitListTableViewCell.cellIdentifier)
         companyTableView.rowHeight = UITableView.automaticDimension
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -43,6 +41,8 @@ class RecuruitListViewController: UIViewController {
             return
         }
         companies = comp!
+        
+        
         companyTableView.reloadData()
     }
     
