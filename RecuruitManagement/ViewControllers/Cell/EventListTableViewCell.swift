@@ -17,8 +17,7 @@ class EventListTableViewCell: UITableViewCell {
     @IBOutlet weak var eventNameLabel: UILabel!
     @IBOutlet weak var eventDateLabel: UILabel!
     @IBOutlet weak var eventLocateLabel: UILabel!
-    
-    @IBOutlet weak var eventMemoField: UITextView!
+    @IBOutlet weak var eventMemoLabel: UILabel!
     static var formatt = "MM月dd日HH時mm分"
     static let cellIdentifier = String(describing: EventListTableViewCell.self)
     let star = UIImage(named: "AspirationStar")
@@ -28,15 +27,19 @@ class EventListTableViewCell: UITableViewCell {
     let clock = UIImage(named: "Clock")
     
     func setup(event:Event) {
+        print(event.eventType)
         eventNameLabel.text = NewEventFormViewController.EventType(rawValue: event.eventType)!.name
         let strDate = stringFromDate(date: event.eventDate!, format: "MM/dd HH:mm")
         eventDateLabel.text = strDate
         eventLocateLabel.text = event.eventLocate
-        eventIcon.image = star
+        if event.eventMemo != nil {
+            eventMemoLabel.text = event.eventMemo
+        }
+        eventIcon.image = NewEventFormViewController.EventType(rawValue: event.eventType)!.image
         dateIcon.image = clock
         locateIcon.image = locate
         memoIcon.image = pencil
-
+        
     }
     
     func stringFromDate(date: Date, format: String) -> String {

@@ -25,7 +25,7 @@ class NewEventFormViewController: FormViewController {
                 $0.title = "イベント内容"
                 $0.options = EventType.allCases.compactMap({$0.name})
             }.onChange() { row in
-                self.eventType = EventType.allCases[row.indexPath?.row ?? 0]
+                self.eventType = self.getEventType(name: row.value!)
             }
             
             <<< DateTimeInlineRow(){
@@ -91,6 +91,40 @@ class NewEventFormViewController: FormViewController {
             }
         }
         
-        
+        var image: UIImage{
+            switch self {
+            case .informationSession:
+                return UIImage(named: "Session")!
+            case .symposium:
+                return UIImage(named: "Symposium")!
+            case .writtenTest:
+                return UIImage(named: "Test")!
+            case .aptitudeTest:
+                return UIImage(named: "Test")!
+            case .practicaltask:
+                return UIImage(named: "Test")!
+            case .presentation:
+                return UIImage(named: "Session")!
+            case .groupWork:
+                return UIImage(named: "Discuss")!
+            case .groupDiscussion:
+                return UIImage(named: "Discuss")!
+            case .groupInterview:
+                return UIImage(named: "Interview")!
+            case .interview:
+                return UIImage(named: "Interview")!
+            case .finalInterview:
+                return UIImage(named: "Interview")!                
+            }
+        }
+    }
+    
+    func getEventType(name: String) -> EventType? {
+        let types = EventType.allCases.compactMap({$0.name})
+        if let index = types.firstIndex(of: name) {
+            let a = EventType.RawValue.self
+            return EventType.allCases[index]
+        }
+        return nil
     }
 }

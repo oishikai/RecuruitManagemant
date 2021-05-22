@@ -112,6 +112,7 @@
                 <outlet property="eventDateLabel" destination="AFf-6Q-sxP" id="5by-tC-Ytu"/>
                 <outlet property="eventIcon" destination="JpC-2o-84k" id="Em5-6v-FTP"/>
                 <outlet property="eventLocateLabel" destination="zI2-X3-Mc0" id="bY9-70-spj"/>
+                <outlet property="eventMemoLabel" destination="nBu-5J-XPq" id="dFX-kJ-KkO"/>
                 <outlet property="eventNameLabel" destination="cEH-Fj-lwN" id="bGq-m9-I4h"/>
                 <outlet property="locateIcon" destination="SAy-Re-vSV" id="tHT-1f-Le0"/>
                 <outlet property="memoIcon" destination="5YM-BM-h9Q" id="fZA-kl-ecj"/>
