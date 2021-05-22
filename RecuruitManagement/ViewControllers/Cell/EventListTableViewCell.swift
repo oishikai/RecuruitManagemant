@@ -23,13 +23,19 @@ class EventListTableViewCell: UITableViewCell {
     static let cellIdentifier = String(describing: EventListTableViewCell.self)
     let star = UIImage(named: "AspirationStar")
     
+    let locate = UIImage(named: "Locate")
+    let pencil = UIImage(named: "Pencil")
+    let clock = UIImage(named: "Clock")
+    
     func setup(event:Event) {
         eventNameLabel.text = event.eventName
         let strDate = stringFromDate(date: event.eventDate!, format: "MM/dd HH:mm")
         eventDateLabel.text = strDate
         eventLocateLabel.text = event.eventLocate
         eventIcon.image = star
-        dateIcon.image = star
+        dateIcon.image = clock
+        locateIcon.image = locate
+        memoIcon.image = pencil
 
     }
     
