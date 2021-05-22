@@ -31,13 +31,25 @@ class EventListViewController: UIViewController {
         eventTable.rowHeight = UITableView.automaticDimension
         
         let events = company.event?.allObjects as! [Event]
-        sortedEvents = events.sorted(by: { (a, b) -> Bool in
-                return a.eventDate! > b.eventDate!
-            })
+        if events.count > 0 {
+            sortedEvents = events.sorted(by: { (a, b) -> Bool in
+                    return a.eventDate! > b.eventDate!
+                })
+        }else{
+            self.sortedEvents = events
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        let events = company.event?.allObjects as! [Event]
+        if events.count > 0 {
+            sortedEvents = events.sorted(by: { (a, b) -> Bool in
+                    return a.eventDate! > b.eventDate!
+                })
+        }else{
+            self.sortedEvents = events
+        }
         eventTable.reloadData()
     }
 
@@ -59,7 +71,8 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: EventListTableViewCell.cellIdentifier, for: indexPath) as! EventListTableViewCell
-        cell.setup(event: self.sortedEvents[indexPath.row])
+        let event = sortedEvents[indexPath.row]
+        cell.setup(event: event)
         return cell
     }
 }
