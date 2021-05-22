@@ -15,6 +15,7 @@ class EventListViewController: UIViewController {
     var company: Company = Company()
     var events:NSSet?
     var mutableSetEvents:NSMutableSet = NSMutableSet()
+    var sortedEvents:[Event] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,11 @@ class EventListViewController: UIViewController {
         let nib = UINib(nibName: EventListTableViewCell.cellIdentifier, bundle: nil)
         eventTable.register(nib, forCellReuseIdentifier: EventListTableViewCell.cellIdentifier)
         eventTable.rowHeight = UITableView.automaticDimension
+        
+        let events = company.event?.allObjects as! [Event]
+        sortedEvents = events.sorted(by: { (a, b) -> Bool in
+                return a.eventDate! > b.eventDate!
+            })
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -53,8 +59,7 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: EventListTableViewCell.cellIdentifier, for: indexPath) as! EventListTableViewCell
-        let events = company.event?.allObjects as! [Event]
-        cell.setup(event: events[indexPath.row])
+        cell.setup(event: self.sortedEvents[indexPath.row])
         return cell
     }
 }

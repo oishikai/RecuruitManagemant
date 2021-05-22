@@ -13,8 +13,6 @@ class RecuruitListViewController: UIViewController {
     var addBarButtonItem: UIBarButtonItem!
 
     private var companies:[Company] = []
-        
-    private var sortedCompany:[Company] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "企業一覧"
