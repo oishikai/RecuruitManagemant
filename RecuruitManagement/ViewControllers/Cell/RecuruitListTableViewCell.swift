@@ -73,10 +73,10 @@ class RecuruitListTableViewCell: UITableViewCell {
             
         }
         if let iconURL = URL(string:company.url!){
-            FaviconFinder(url: iconURL).downloadFavicon { result in
+            FaviconFinder(url: iconURL).downloadFavicon { [weak self] result in
                 switch result {
                 case .success(let favicon):
-                    self.companyIcon.image = favicon.image
+                    self?.companyIcon.image = favicon.image
                 case .failure(let error):
                     print("Error: \(error)")
                 }
