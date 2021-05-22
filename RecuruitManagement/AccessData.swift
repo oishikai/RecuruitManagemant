@@ -46,9 +46,9 @@ class AccessData: UIViewController {
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
     
-    static func saveNewEvent(company:Company, name: String, date:Date, locate:String, memo:String? = nil) -> Void {
+    static func saveNewEvent(company:Company, type: NewEventFormViewController.EventType, date:Date, locate:String, memo:String? = nil) -> Void {
         let newEvent = Event(context: self.managedObjectContext)
-        newEvent.eventName = name
+        newEvent.eventType = type.rawValue
         newEvent.eventLocate = locate
         newEvent.eventDate = date
         if let eventMemo = memo {

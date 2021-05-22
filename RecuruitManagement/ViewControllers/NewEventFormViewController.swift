@@ -10,7 +10,7 @@ import Eureka
 
 class NewEventFormViewController: FormViewController {
     
-    var eventName:String?
+    var eventType:EventType?
     var eventDate:Date?
     var eventLocate:String?
     var eventMemo:String?
@@ -23,10 +23,9 @@ class NewEventFormViewController: FormViewController {
         form +++ Section("イベントの情報")
             <<< PushRow<String> {
                 $0.title = "イベント内容"
-                $0.options = ["会社説明会","座談会","筆記試験","適正検査","実技課題","プレゼン発表",
-                              "グループワーク","グループディスカッション","集団面接","面接","最終面接"]
+                $0.options = EventType.allCases.compactMap({$0.name})
             }.onChange() { row in
-                self.eventName = row.value!
+                self.eventType = EventType.allCases[row.indexPath?.row ?? 0]
             }
             
             <<< DateTimeInlineRow(){
@@ -53,8 +52,8 @@ class NewEventFormViewController: FormViewController {
             <<< ButtonRow("フォームを送信") {row in
                 row.title = "イベント追加"
                 row.onCellSelection{[unowned self] ButtonCellOf, row in
-                    if AccessData.canUnwrapDatas(dataArray: [eventName,eventLocate]) {
-                        AccessData.saveNewEvent(company: company, name: eventName!, date: eventDate!, locate: eventLocate!, memo: eventMemo)
+                    if AccessData.canUnwrapDatas(dataArray: [eventLocate]) {
+                        AccessData.saveNewEvent(company: company, type: eventType!, date: eventDate!, locate: eventLocate!, memo: eventMemo)
                         DispatchQueue.main.async {
                             self.navigationController?.popViewController(animated: true)
                         }
@@ -63,7 +62,7 @@ class NewEventFormViewController: FormViewController {
             }
     }
     
-    enum EventName:Int16 {
+    enum EventType: Int16, CaseIterable{
         case informationSession
         case symposium
         case writtenTest
@@ -76,7 +75,7 @@ class NewEventFormViewController: FormViewController {
         case interview
         case finalInterview
         
-        var str:String {
+        var name: String {
             switch self {
             case .informationSession: return "会社説明会"
             case .symposium: return "座談会"
@@ -91,5 +90,7 @@ class NewEventFormViewController: FormViewController {
             case .finalInterview: return "最終面接"
             }
         }
+        
+        
     }
 }

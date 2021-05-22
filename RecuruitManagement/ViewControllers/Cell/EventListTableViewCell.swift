@@ -28,7 +28,7 @@ class EventListTableViewCell: UITableViewCell {
     let clock = UIImage(named: "Clock")
     
     func setup(event:Event) {
-        eventNameLabel.text = event.eventName
+        eventNameLabel.text = NewEventFormViewController.EventType(rawValue: event.eventType)!.name
         let strDate = stringFromDate(date: event.eventDate!, format: "MM/dd HH:mm")
         eventDateLabel.text = strDate
         eventLocateLabel.text = event.eventLocate

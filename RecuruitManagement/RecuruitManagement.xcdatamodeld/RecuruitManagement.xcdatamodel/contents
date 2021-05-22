@@ -11,7 +11,7 @@
         <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="eventLocate" optional="YES" attributeType="String"/>
         <attribute name="eventMemo" optional="YES" attributeType="String"/>
-        <attribute name="eventName" optional="YES" attributeType="String"/>
+        <attribute name="eventType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="company" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Company" inverseName="event" inverseEntity="Company"/>
     </entity>
     <elements>
