@@ -27,8 +27,7 @@ class EventListTableViewCell: UITableViewCell {
     let clock = UIImage(named: "Clock")
     
     func setup(event:Event) {
-        print(event.eventType)
-        eventNameLabel.text = NewEventFormViewController.EventType(rawValue: event.eventType)!.name
+        eventNameLabel.text = EventType(rawValue: event.eventType)!.name
         let strDate = stringFromDate(date: event.eventDate!, format: "MM/dd HH:mm")
         eventDateLabel.text = strDate
         eventLocateLabel.text = event.eventLocate
@@ -37,7 +36,7 @@ class EventListTableViewCell: UITableViewCell {
         }else {
             eventMemoLabel.text = "---"
         }
-        eventIcon.image = NewEventFormViewController.EventType(rawValue: event.eventType)!.image
+        eventIcon.image = EventType(rawValue: event.eventType)!.image
         dateIcon.image = clock
         locateIcon.image = locate
         memoIcon.image = pencil

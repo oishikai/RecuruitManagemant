@@ -68,4 +68,5 @@ class NewCompanyFormViewController: FormViewController {
                 }
             }
     }
+    
 }
