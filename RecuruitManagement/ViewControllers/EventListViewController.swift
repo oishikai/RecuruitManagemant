@@ -75,4 +75,14 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setup(event: event)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        DispatchQueue.main.async {
+            let storyboard = UIStoryboard(name: "UpdateEventViewController", bundle: nil)
+            let nextVC = storyboard.instantiateViewController(identifier: "UpdateEventViewController")as! UpdateEventViewController
+            self.navigationController?.pushViewController(nextVC, animated: true)
+            nextVC.event = self.sortedEvents[indexPath.row]
+            nextVC.company = self.company
+        }
+    }
 }
