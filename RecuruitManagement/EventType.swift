@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-//class EventType {
     enum EventType: Int16, CaseIterable{
         case informationSession
         case symposium
@@ -73,12 +72,4 @@ import UIKit
             return nil
         }
     }
-    
-//    static func getEventType(name: String) -> EventType? {
-//        let types = EventType.allCases.compactMap({$0.name})
-//        if let index = types.firstIndex(of: name) {
-//            return EventType.allCases[index]
-//        }
-//        return nil
-//    }
-//}
+

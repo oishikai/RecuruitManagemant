@@ -31,8 +31,6 @@ class UpdateEventViewController: FormViewController {
                 self.eventType = eventType
             }
             <<< DateTimeInlineRow(){
-                let strDate = stringFromDate(date: event.eventDate!, format: "MM/dd HH:mm")
-                let date = Date()
                 $0.title = "日時"
             }.onChange() { row in
                 self.eventDate = row.value!
@@ -51,7 +49,7 @@ class UpdateEventViewController: FormViewController {
             <<< TextAreaRow(){ row in
                 row.placeholder = "詳細を入力する"
                 if let memo = eventMemo {
-                    row.value = eventMemo
+                    row.value = memo
                 }
             }.onChange() { row in
                 if let memo = row.value {
@@ -72,12 +70,6 @@ class UpdateEventViewController: FormViewController {
                 }
             }
     }
-    
-    func stringFromDate(date: Date, format: String) -> String {
-            let formatter: DateFormatter = DateFormatter()
-            formatter.calendar = Calendar(identifier: .gregorian)
-            formatter.dateFormat = format
-            return formatter.string(from: date)
-        }
+
 }
 
