@@ -22,17 +22,18 @@ class UpdateEventViewController: FormViewController {
         super.viewDidLoad()
         self.title = "イベント情報を更新"
         form +++ Section("イベントの情報")
-            
             <<< PushRow<String> {
-                $0.title = "イベント内容 ( \(EventType(rawValue: event.eventType)!.name) に設定中 )"
+                $0.title = "イベント内容"
                 $0.options = EventType.allCases.compactMap({$0.name})
+                $0.value = EventType(rawValue: event.eventType)!.name
             }.onChange() { row in
                 guard let value = row.value, let eventType = EventType.getEventType(name: value) else { return }
                 self.eventType = eventType
             }
             <<< DateTimeInlineRow(){
                 let strDate = stringFromDate(date: event.eventDate!, format: "MM/dd HH:mm")
-                $0.title = "日時 ( \(strDate) に設定中 )"
+                let date = Date()
+                $0.title = "日時"
             }.onChange() { row in
                 self.eventDate = row.value!
             }
@@ -49,6 +50,9 @@ class UpdateEventViewController: FormViewController {
             
             <<< TextAreaRow(){ row in
                 row.placeholder = "詳細を入力する"
+                if let memo = eventMemo {
+                    row.value = eventMemo
+                }
             }.onChange() { row in
                 if let memo = row.value {
                     self.eventMemo = memo
