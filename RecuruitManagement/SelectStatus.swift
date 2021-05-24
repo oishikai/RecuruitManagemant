@@ -20,4 +20,12 @@ enum SelectStatus: Int16, CaseIterable {
         case .selection: return "選考中"
         }
     }
+    
+    static func getEventType(name: String) -> SelectStatus? {
+        let status = SelectStatus.allCases.compactMap({$0.name})
+        if let index = status.firstIndex(of: name) {
+            return SelectStatus.allCases[index]
+        }
+        return nil
+    }
 }
