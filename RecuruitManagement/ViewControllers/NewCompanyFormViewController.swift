@@ -13,7 +13,7 @@ class NewCompanyFormViewController: FormViewController {
     var companyName:String?
     var companyURL:String?
     var aspiration:String?
-    var selectionStatus:String?
+    var selectionStatus:SelectStatus?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,11 +48,10 @@ class NewCompanyFormViewController: FormViewController {
             
             <<< ActionSheetRow<String>(){ row in
                 row.title = "現在の状況"
-                row.options = ["未エントリー", "エントリー済","選考中"]
+                row.options = SelectStatus.allCases.compactMap({$0.name})
             }.onChange{[unowned self] row in
-                if let status = row.value {
-                    self.selectionStatus = status
-                }
+                guard let value = row.value, let eventStatus = SelectStatus.getEventType(name: value) else { return }
+                self.selectionStatus = eventStatus
             }
             +++ Section("会社の追加を確定する")
             
