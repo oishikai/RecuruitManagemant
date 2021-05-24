@@ -29,6 +29,7 @@
 		2AB1286326597E0300E9DFF9 /* UpdateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB1286226597E0300E9DFF9 /* UpdateEventViewController.swift */; };
 		2AB1286526597E2B00E9DFF9 /* UpdateEventViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AB1286426597E2B00E9DFF9 /* UpdateEventViewController.storyboard */; };
 		2AB1286726597F9100E9DFF9 /* EventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB1286626597F9100E9DFF9 /* EventType.swift */; };
+		2AC25B14265BE4C800250F47 /* SelectStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC25B13265BE4C800250F47 /* SelectStatus.swift */; };
 		2AFDE846264F854800E6D5DF /* EventListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AFDE845264F854800E6D5DF /* EventListViewController.storyboard */; };
 		2AFDE848264F857500E6D5DF /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDE847264F857500E6D5DF /* EventListViewController.swift */; };
 		2BD761FC9AF310E29C8916F0 /* Pods_RecuruitManagement_RecuruitManagementUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38946592EAFB9DFB0B169727 /* Pods_RecuruitManagement_RecuruitManagementUITests.framework */; };
@@ -83,6 +84,7 @@
 		2AB1286226597E0300E9DFF9 /* UpdateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateEventViewController.swift; sourceTree = "<group>"; };
 		2AB1286426597E2B00E9DFF9 /* UpdateEventViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UpdateEventViewController.storyboard; sourceTree = "<group>"; };
 		2AB1286626597F9100E9DFF9 /* EventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventType.swift; sourceTree = "<group>"; };
+		2AC25B13265BE4C800250F47 /* SelectStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStatus.swift; sourceTree = "<group>"; };
 		2AFDE845264F854800E6D5DF /* EventListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventListViewController.storyboard; sourceTree = "<group>"; };
 		2AFDE847264F857500E6D5DF /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		38946592EAFB9DFB0B169727 /* Pods_RecuruitManagement_RecuruitManagementUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecuruitManagement_RecuruitManagementUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +154,7 @@
 				2A84579A264D6DB300D3691C /* ViewControllers */,
 				2AA05DFB264E055A004546F8 /* AccessData.swift */,
 				2AB1286626597F9100E9DFF9 /* EventType.swift */,
+				2AC25B13265BE4C800250F47 /* SelectStatus.swift */,
 				2A2DA29A263BC313001B6DC9 /* AppDelegate.swift */,
 				2A2DA29C263BC313001B6DC9 /* SceneDelegate.swift */,
 				2A2DA2A6263BC314001B6DC9 /* Assets.xcassets */,
@@ -489,6 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AC25B14265BE4C800250F47 /* SelectStatus.swift in Sources */,
 				2A03187B265408C900CF21E7 /* NewCompanyFormViewController.swift in Sources */,
 				2AFDE848264F857500E6D5DF /* EventListViewController.swift in Sources */,
 				2AB1286326597E0300E9DFF9 /* UpdateEventViewController.swift in Sources */,
