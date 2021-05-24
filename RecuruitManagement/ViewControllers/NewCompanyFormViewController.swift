@@ -58,7 +58,7 @@ class NewCompanyFormViewController: FormViewController {
             <<< ButtonRow("") {row in
                 row.title = "新しい会社を追加"
                 row.onCellSelection{[unowned self] ButtonCellOf, row in
-                    if AccessData.canUnwrapDatas(dataArray: [companyName,aspiration,selectionStatus]){
+                    if AccessData.canUnwrapDatas(dataArray: [companyName,aspiration]){
                         AccessData.saveNewCompany(name: companyName!, url: companyURL!, aspiration: aspiration!, status: selectionStatus!)
                         DispatchQueue.main.async {
                             self.navigationController?.popViewController(animated: true)
