@@ -51,7 +51,7 @@ class EventListViewController: UIViewController {
             self.sortedEvents = events
         }
         eventTable.reloadData()
-        if company.selectionStatus == 0 {
+        if company.selectionStatus == 0 && company.event?.count != 0{
             let actionSheet = UIAlertController(title: "\(company.companyName!)の選考状況を変更しますか？", message: "", preferredStyle: UIAlertController.Style.actionSheet)
 
             // 表示させたいタイトル1ボタンが押された時の処理をクロージャ実装する
