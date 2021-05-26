@@ -57,6 +57,20 @@ class AccessData: UIViewController {
         company.addToEvent(newEvent)
     }
     
+    static func updateSelectionStatus(company: Company, status: SelectStatus) {
+        let dataCondition = NSFetchRequest<NSFetchRequestResult>(entityName: "Company")
+        let predict = NSPredicate(format: "%K = %@","selectionStatus", company.selectionStatus)
+        dataCondition.predicate = predict
+        do {
+            let results = try managedObjectContext.fetch(dataCondition)
+            for myData in results {
+                managedObjectContext.setValue(status, forKey: "selectionStatus")
+                }
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        }catch{
+            
+        }
+    }
     static func deleteCompany(company: Company){
         let dataCondition = NSFetchRequest<NSFetchRequestResult>(entityName: "Company")
         let predict = NSPredicate(format: "%K = %@","companyName", company.companyName!)
