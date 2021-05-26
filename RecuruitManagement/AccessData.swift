@@ -28,7 +28,7 @@ class AccessData: UIViewController {
         return dataArray.filter({$0?.isEmpty ?? true}).count == 0
     }
     
-    static func saveNewCompany(name: String, url: String, aspiration: String, status:String) -> Void {
+    static func saveNewCompany(name: String, url: String, aspiration: String, status:SelectStatus) -> Void {
         var companies:[Company] = []
         let comp = AccessData.getCompanies()
         guard comp != nil else {
@@ -41,7 +41,7 @@ class AccessData: UIViewController {
         newCompany.companyName = name
         newCompany.url = url
         newCompany.aspiration = aspiration
-        newCompany.selectionStatus = status
+        newCompany.selectionStatus = status.rawValue
         companies.append(newCompany)
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
@@ -57,6 +57,20 @@ class AccessData: UIViewController {
         company.addToEvent(newEvent)
     }
     
+    static func updateSelectionStatus(company: Company, status: SelectStatus) {
+        let dataCondition = NSFetchRequest<NSFetchRequestResult>(entityName: "Company")
+        let predict = NSPredicate(format: "%K = %@","selectionStatus", company.selectionStatus)
+        dataCondition.predicate = predict
+        do {
+            let results = try managedObjectContext.fetch(dataCondition)
+            for myData in results {
+                managedObjectContext.setValue(status, forKey: "selectionStatus")
+                }
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        }catch{
+            
+        }
+    }
     static func deleteCompany(company: Company){
         let dataCondition = NSFetchRequest<NSFetchRequestResult>(entityName: "Company")
         let predict = NSPredicate(format: "%K = %@","companyName", company.companyName!)

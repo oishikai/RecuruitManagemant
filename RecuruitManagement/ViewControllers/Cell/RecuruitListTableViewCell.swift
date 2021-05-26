@@ -29,7 +29,7 @@ class RecuruitListTableViewCell: UITableViewCell {
     
     func setup(company:Company) {
         companyName.text = company.companyName
-        selectionStatus.text = company.selectionStatus
+        selectionStatus.text = SelectStatus(rawValue: company.selectionStatus)!.name
         aspiration = Int(string: company.aspiration!) ?? 0
         
         star1Image.image = star

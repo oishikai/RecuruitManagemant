@@ -51,6 +51,31 @@ class EventListViewController: UIViewController {
             self.sortedEvents = events
         }
         eventTable.reloadData()
+        if company.selectionStatus == 0 && company.event?.count != 0{
+            let actionSheet = UIAlertController(title: "\(company.companyName!)の選考状況を変更しますか？", message: "", preferredStyle: UIAlertController.Style.actionSheet)
+
+            // 表示させたいタイトル1ボタンが押された時の処理をクロージャ実装する
+            let action1 = UIAlertAction(title: SelectStatus(rawValue: 1)!.name, style: UIAlertAction.Style.default, handler: {
+                (action: UIAlertAction!) in
+                self.company.selectionStatus = 1
+            })
+            // 表示させたいタイトル2ボタンが押された時の処理をクロージャ実装する
+            let action2 = UIAlertAction(title: SelectStatus(rawValue: 2)!.name, style: UIAlertAction.Style.default, handler: {
+                (action: UIAlertAction!) in
+                self.company.selectionStatus = 2
+            })
+            
+            let close = UIAlertAction(title: "変更しない", style: UIAlertAction.Style.destructive, handler: {
+                (action: UIAlertAction!) in
+            })
+
+            //UIAlertControllerにタイトル1ボタンとタイトル2ボタンと閉じるボタンをActionを追加
+            actionSheet.addAction(action1)
+            actionSheet.addAction(action2)
+            actionSheet.addAction(close)
+            //実際にAlertを表示する
+            self.present(actionSheet, animated: true, completion: nil)
+        }
     }
 
     @objc func addBarButtonTapped(_ sender: UIBarButtonItem) {
