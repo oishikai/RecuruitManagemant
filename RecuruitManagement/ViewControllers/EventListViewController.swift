@@ -110,4 +110,15 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
             nextVC.company = self.company
         }
     }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let selectedEvent = sortedEvents[indexPath.row]
+        sortedEvents.remove(at: indexPath.row)
+        AccessData.deleteCompany(company: com)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
 }
