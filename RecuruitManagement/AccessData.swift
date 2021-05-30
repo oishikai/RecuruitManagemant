@@ -42,6 +42,7 @@ class AccessData: UIViewController {
         newCompany.url = url
         newCompany.aspiration = aspiration
         newCompany.selectionStatus = status.rawValue
+        newCompany.companyId = UUID().uuidString
         companies.append(newCompany)
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
@@ -51,6 +52,7 @@ class AccessData: UIViewController {
         newEvent.eventType = type.rawValue
         newEvent.eventLocate = locate
         newEvent.eventDate = date
+        newEvent.eventId = UUID().uuidString
         if let eventMemo = memo {
             newEvent.eventMemo = eventMemo
         }
@@ -79,6 +81,21 @@ class AccessData: UIViewController {
             let results = try managedObjectContext.fetch(dataCondition)
             for myData in results {
                 managedObjectContext.delete(myData as! Company)
+                }
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        }catch{
+            
+        }
+    }
+    
+    static func deleteEvent(company:Company, event:Event) {
+        let dataCondition = NSFetchRequest<NSFetchRequestResult>(entityName: "Event")
+        let predict = NSPredicate(format: "%K = %@","eventId", event.eventId!)
+        dataCondition.predicate = predict
+        do {
+            let results = try managedObjectContext.fetch(dataCondition)
+            for myData in results {
+                managedObjectContext.delete(myData as! Event)
                 }
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
         }catch{
