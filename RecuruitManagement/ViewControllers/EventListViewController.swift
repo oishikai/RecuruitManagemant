@@ -30,36 +30,19 @@ class EventListViewController: UIViewController {
         eventTable.register(nib, forCellReuseIdentifier: EventListTableViewCell.cellIdentifier)
         eventTable.rowHeight = UITableView.automaticDimension
         
-        let events = company.event?.allObjects as! [Event]
-        if events.count > 0 {
-            sortedEvents = events.sorted(by: { (a, b) -> Bool in
-                    return a.eventDate! > b.eventDate!
-                })
-        }else{
-            self.sortedEvents = events
-        }
+        self.sortedEvents = sortEvent()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let events = company.event?.allObjects as! [Event]
-        if events.count > 0 {
-            sortedEvents = events.sorted(by: { (a, b) -> Bool in
-                    return a.eventDate! > b.eventDate!
-                })
-        }else{
-            self.sortedEvents = events
-        }
+        self.sortedEvents = sortEvent()
         eventTable.reloadData()
         if company.selectionStatus == 0 && company.event?.count != 0{
             let actionSheet = UIAlertController(title: "\(company.companyName!)の選考状況を変更しますか？", message: "", preferredStyle: UIAlertController.Style.actionSheet)
-
-            // 表示させたいタイトル1ボタンが押された時の処理をクロージャ実装する
             let action1 = UIAlertAction(title: SelectStatus(rawValue: 1)!.name, style: UIAlertAction.Style.default, handler: {
                 (action: UIAlertAction!) in
                 self.company.selectionStatus = 1
             })
-            // 表示させたいタイトル2ボタンが押された時の処理をクロージャ実装する
             let action2 = UIAlertAction(title: SelectStatus(rawValue: 2)!.name, style: UIAlertAction.Style.default, handler: {
                 (action: UIAlertAction!) in
                 self.company.selectionStatus = 2
@@ -68,12 +51,9 @@ class EventListViewController: UIViewController {
             let close = UIAlertAction(title: "変更しない", style: UIAlertAction.Style.destructive, handler: {
                 (action: UIAlertAction!) in
             })
-
-            //UIAlertControllerにタイトル1ボタンとタイトル2ボタンと閉じるボタンをActionを追加
             actionSheet.addAction(action1)
             actionSheet.addAction(action2)
             actionSheet.addAction(close)
-            //実際にAlertを表示する
             self.present(actionSheet, animated: true, completion: nil)
         }
     }
@@ -84,6 +64,19 @@ class EventListViewController: UIViewController {
             let nextVC = storyboard.instantiateViewController(identifier: "NewEventFormViewController")as! NewEventFormViewController
             nextVC.company = self.company
             self.navigationController?.pushViewController(nextVC, animated: true)
+        }
+    }
+    
+    func sortEvent() -> [Event] {
+        let events = company.event?.allObjects as! [Event]
+        if events.count > 0 {
+            let sorted = events.sorted(by: { (a, b) -> Bool in
+                    return a.eventDate! > b.eventDate!
+                })
+            return sorted
+        }else{
+            let sorted = events
+            return sorted
         }
     }
 }
@@ -98,6 +91,7 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: EventListTableViewCell.cellIdentifier, for: indexPath) as! EventListTableViewCell
         let event = sortedEvents[indexPath.row]
         cell.setup(event: event)
+        print(event.company?.companyName)
         return cell
     }
     
@@ -110,4 +104,17 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
             nextVC.company = self.company
         }
     }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let selectedEvent = sortedEvents[indexPath.row]
+        sortedEvents.remove(at: indexPath.row)
+        AccessData.deleteEvent(company: company, event: selectedEvent)
+        self.sortedEvents = sortEvent()
+        eventTable.reloadData()
+    }
+    
 }

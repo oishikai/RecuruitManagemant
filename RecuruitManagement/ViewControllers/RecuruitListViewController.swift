@@ -98,6 +98,6 @@ extension RecuruitListViewController: UITableViewDelegate, UITableViewDataSource
             } else {
                 return UITableViewCell.EditingStyle.none
             }
-
+        
     }
 }
